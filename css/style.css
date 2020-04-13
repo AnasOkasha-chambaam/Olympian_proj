@@ -5,6 +5,7 @@
   --wdrk-clr: #333;
   --sec-clr: #fcd729;
   --red-clr: rgb(182, 42, 7);
+  --gdrk-clr: #2b2c2b;
   --dred-clr: rgb(136, 32, 6);
   --prim-font: Copperplate Gothic Bold;
   --sec-font: Comic Sans MS;
@@ -48,6 +49,7 @@ body {
   display: block;
   margin: 11px auto;
   padding: 0;
+  font-size: 10px;
 }
 .header .m-container .name{
   grid-row: 1 / span 1;
@@ -59,7 +61,21 @@ body {
   margin-top: 15px;
   padding: 0;
 }
-.header .m-container .categ{
+.header .m-container .categ li{position: relative;;padding: 0 8px;}
+.header .m-container .categ li::before{
+  content: '';
+  width: 7px;
+  height: 7px;
+  background-color: var(--wt-clr);
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 40%;
+}
+.header .m-container .categ li:first-child::before{
+  display: none;
+}
+.header .m-container .categ {
   grid-row: 2 / span 1;
   grid-column: 2 / span 1 ;
   margin: 0;
@@ -70,6 +86,8 @@ body {
   text-align: center;
   grid-template-columns: repeat(5, 1fr);
   font-size: 12px;
+  font-family: var(--prim-font) !important;
+
 }
 /* .header .m-container a {
   width: 30px;
@@ -108,7 +126,7 @@ body {
 /* CONTACT SHOWCASE ST */
 .contact-showcase {
   width: 100vw;
-  height: 540px;
+  height: 48 0px;
   background-color: var(--wdrk-clr);
   background: url("../img/getback.jpg") no-repeat center center/cover;
   position: relative;
@@ -123,9 +141,8 @@ body {
   content: ''; 
   position: absolute;
   right: 60px;
-  /* top: 0; */
-  bottom: 0;
-  width: 400px;
+  top: 10px;
+  width: 420px;
   height: 450px;
   background: url("../img/getimg.png") no-repeat center center/cover;
 }
@@ -143,7 +160,8 @@ body {
 .contact-showcase .m-container form{
   width: 416px;
   padding: 20px;
-  padding-top: 30px
+  padding-top: 30px;
+  font-family: var(--sec-font) !important;
 }
 .contact-showcase .m-container form .inpts {
   display: grid;
@@ -157,6 +175,7 @@ body {
 .contact-showcase .m-container form .inpts label {
   padding-bottom: 4px;
   font-weight: bold;
+  font-family: var(--sec-font) !important;
  }
 .contact-showcase .m-container form .inpts input {
   background-color: var(--wt-clr);
@@ -165,7 +184,7 @@ body {
   padding-left: 5px;
 }
 .contact-showcase .m-container form .txt-area-div #message{
-  margin: 0px; width: 380px; height: 210px;
+  margin: 0px; width: 100%; height: 118px;
   margin-top: 10px !important;
   padding: 5px;
   display: block;
@@ -183,6 +202,8 @@ body {
   background-color: var(--sec-clr);
   color: var(--wdrk-clr);
   cursor: pointer;
+  border: 0.1px solid black;
+  box-shadow: 0px 0px 4px black;
 }
 /* CONTACT SHOWCASE END */
 /* NOT BUILT ST */
@@ -208,7 +229,7 @@ body {
   display: grid;
   justify-content: center;
   align-items: center;
-  background-color: var(--drk-clr);
+  background-color: var(--gdrk-clr);
   border-top: var(--sec-clr) solid 10px;
   border-bottom: var(--sec-clr) solid 10px;
   grid-template-columns: 100%;;
@@ -227,11 +248,12 @@ body {
   width: 500px;
 }
 .follow-section .m-container .follow-txt {
-  font-family: var(--sec-font);
+  font-family: var(--sec-font) !important;
   margin-top: 15px;
   font-size: 18px;
   margin: auto;
   text-align: center;
+  color: #000101;
 }
 .follow-section .m-container .social-accs {
   display: grid;
@@ -368,7 +390,7 @@ a.to-prim {
     grid-template-columns:  85.792px 454.198px
   }
 }
-@media (max-width: 415px){
+@media (max-width: 440px){
   a.to-prim {
     opacity: 0;
     animation-name: sec-anim;
