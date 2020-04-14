@@ -4,11 +4,14 @@
   --drk-clr: rgb(27, 27, 27);
   --wdrk-clr: #333;
   --sec-clr: #fcd729;
+  --third-clr: #a65a4c;
   --red-clr: rgb(182, 42, 7);
   --gdrk-clr: #2b2c2b;
   --dred-clr: rgb(136, 32, 6);
   --prim-font: Copperplate Gothic Bold;
   --sec-font: Comic Sans MS;
+  --brdr-size: 10px;
+  --shadow-clr: #dbb76e83;
 }
 h1{
   margin: 0;
@@ -28,7 +31,7 @@ body {
   width: 100vw;
   max-height: 170px;
   /* padding-bottom: 4px; */
-  border-bottom: var(--wt-clr) solid 4px;
+  border-bottom: 4px solid var(--wt-clr);
   color: var(--wt-clr);
   background-color: var(--drk-clr);
 }
@@ -230,8 +233,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--gdrk-clr);
-  border-top: var(--sec-clr) solid 10px;
-  border-bottom: var(--sec-clr) solid 10px;
+  border-top: var(--brdr-size) solid var(--sec-clr);
+  border-bottom: var(--brdr-size) solid  var(--sec-clr);
   grid-template-columns: 100%;;
   /* margin: 30px 0; */
 }
@@ -272,6 +275,143 @@ body {
   background-color: var(--prim-clr) !important;
 }
 /* FOLLOW SECTION END */
+/* CONTACT PAGE END */
+/* FREE RESOURCES ST */
+.free-res {
+  max-width: 100vw;
+  height: 360px;
+  background-color: red;
+}
+.free-res .m-container {
+  width: 100%;
+  /* display: grid;
+  justify-content: center; */
+}
+.free-res .m-container > img {
+  width: 350px;
+  margin: auto;
+  padding-top: 13px;
+  display: block;
+}
+.free-res .m-container .carousel {
+  margin: auto;
+  width: 100%;
+  height: 260px;
+  /* display: none; */
+}
+.free-res .m-container .carousel .carousel-item {
+  width: 330px;
+  height: 230px;
+  padding: 50px;
+  border: 1px solid var(--sec-clr);
+}
+ .carousel-item .vid-title {
+  text-align: center;
+  color: var(--wt-clr);
+  font-family: var(--sec-font);
+  font-weight: bolder;
+  font-size: 18.5px;
+  background: linear-gradient(to bottom, transparent 45%, var(--third-clr) 55%)
+}
+.fst-sect {
+  background: url(../img/resfstback.jpg) no-repeat center center/cover;
+  border-bottom: var(--brdr-size) solid var(--sec-clr);
+}
+.sec-sect {
+  background: url(../img/secbackimg.jpg) no-repeat center center/cover;
+}
+.sec-sect .carousel-item{
+  width: 330px;
+  height: 230px;
+  padding: 50px;
+}
+.sec-sect .carousel-item video {
+  display: block;
+  margin: auto;
+  width: 250px;
+  box-shadow: -25px -20px var(--shadow-clr);
+}
+
+.sec-sect .carousel-item .vid-title {
+  margin-top: 8px;
+}
+.lSSlideOuter .lSPager.lSpg > li a {
+  background-color: var(--wt-clr)
+}
+.lSSlideOuter .lSPager.lSpg > li:hover a, .lSSlideOuter .lSPager.lSpg > li.active a {
+  background-color: var(--sec-clr);
+}
+.third-sect {
+  background: url(../img/thirdbackimg.jpg) no-repeat center center/cover;
+  border-top: var(--brdr-size) solid var(--sec-clr);
+  border-bottom: var(--brdr-size) solid var(--sec-clr);
+  position: relative;
+  height: auto;
+  min-height: 360px;
+}
+.third-sect::before {
+  content: '';
+  position: absolute;
+  width: 140PX;
+  height: 150px;
+  top: -32px;
+  right: 180px;
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+}
+.third-sect::after {
+  content: '';
+  position: absolute;
+  width: 140PX;
+  height: 150px;
+  top: -40px;
+  right: 159px;
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  opacity: 0.4;
+}
+.third-sect .m-container {
+  padding: 0 80px;
+}
+.third-sect .m-container .tests {
+  width: 100%;
+  /* padding: 0 20px; */
+  margin: auto;
+  padding-top: 35px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  /* grid-template-rows: repeat(auto-fit, minmax(300px, 1fr)); */
+}
+.third-sect .m-container .tests .test a{
+  margin: auto;
+  /* padding: 40px; */
+  width: 180px;
+  height: 180px;
+  padding: 20px;
+  border-radius: 100%;
+  background-color: var(--gdrk-clr);
+  border: 4px solid var(--wt-clr);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+}
+.third-sect .m-container .tests .test a img {
+  width: 90px;
+  display: block;
+  margin: auto;
+  /* vertical-align: middle; */
+}
+.third-sect .m-container .tests .test p {
+  text-align: center;
+  color: var(--wt-clr);
+  font-family: var(--sec-font);
+  font-weight: bolder;
+  font-size: 18.5px;
+  background-color: var(--wt-clr);
+  color: var(--drk-clr);
+  margin-top: 10px
+}
+/* FREE RESOURCES END */
 /* FOOTER ST */
 .footer {
   display: block;

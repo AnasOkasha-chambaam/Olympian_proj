@@ -29,7 +29,22 @@ function test(){
 }
 window.addEventListener('scroll', test );
 
-document.getElementById('m-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  return false;
-})
+if(document.getElementById('m-form')!==null){
+  document.getElementById('m-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    return false;
+  })
+  
+}
+
+function fetchDat(){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', '../API/BOXING VID.html', true);
+  xhr.onload = () => {
+    console.log(xhr.responseText)
+    console.log(xhr.status)
+  };
+  xhr.send();
+
+}
+fetchDat()
