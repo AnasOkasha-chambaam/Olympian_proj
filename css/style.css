@@ -320,20 +320,34 @@ body {
 .sec-sect {
   background: url(../img/secbackimg.jpg) no-repeat center center/cover;
 }
-.sec-sect .carousel-item{
+.fst-sect ,
+.sec-sect  {
+  height: 392px !important
+}
+.fst-sect .m-container .vidss,
+.sec-sect .m-container .vidss{
+  padding-top: 24px;
+  height: 255px !important;
+}
+.sec-sect .carousel-item, .fst-sect .carousel-item{
   width: 330px;
   height: 230px;
-  padding: 50px;
+  padding: 9px 30px;
+  padding-bottom: 0;
 }
-.sec-sect .carousel-item video {
+.sec-sect .carousel-item video, .fst-sect .carousel-item video {
   display: block;
   margin: auto;
-  width: 250px;
+  width: 345px;
   box-shadow: -25px -20px var(--shadow-clr);
 }
+.fst-sect .carousel-item video {box-shadow: none}
 
-.sec-sect .carousel-item .vid-title {
+.sec-sect .carousel-item .vid-title, .fst-sect .carousel-item .vid-title {
   margin-top: 8px;
+  margin: auto;
+  width: max-content;
+  padding: 0 5px;
 }
 .lSSlideOuter .lSPager.lSpg > li a {
   background-color: var(--wt-clr)
@@ -409,7 +423,10 @@ body {
   font-size: 18.5px;
   background-color: var(--wt-clr);
   color: var(--drk-clr);
-  margin-top: 10px
+  margin: auto;
+  margin-top: 10px;
+  width: max-content;
+  padding: 0 4px;
 }
 /* FREE RESOURCES END */
 /* FOOTER ST */

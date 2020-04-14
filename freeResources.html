@@ -26,7 +26,7 @@
       <h1 class="name"><span class="olym anim-cls">OLYMPIAN</span> <span class="remain anim-cls">RAMY HELMY</span></h1>
       <ul class="categ">
         <li class="catt" id="catt-1"><a class="transi" href="notbuild.html">SERVICES</a></li>
-        <li class="catt" id="catt-2"><a class="transi" href="notbuild.html">COURSES & PROGRAMS</a></li>
+        <li class="catt" id="catt-2"><a class="transi" href="notbuild.html">COURSES</a></li>
         <li class="catt crrnt" id="catt-3"><a class="transi" href="freeResources.html">FREE RESOURCES</a></li>
         <li class="catt" id="catt-4"><a class="transi" href="notbuild.html">GALLERY</a></li>
         <li class="catt" id="catt-5"><a href="contact.html">CONTACT US</a></li>
@@ -36,7 +36,7 @@
   <section class="fst-sect free-res">
     <div class="m-container">
       <img src="img/fstsectimg.png" alt="BOXING VIDEOS">
-      <div class="carousel">
+      <div id="ltr" class="vidss">
         <div class="carousel-item">
           <video class="responsive-video" controls>
             <source src="video/Video3.mp4" type="video/mp4">
@@ -86,7 +86,7 @@
   <section class="sec-sect free-res">
     <div class="m-container">
       <img src="img/secsectimg.png" alt="BOXING VIDEOS">
-      <div id="ltr" class="">
+      <div id="ltr" class="vidss">
         <div class="carousel-item">
           <video class="responsive-video" controls>
             <source src="video/Video3.mp4" type="video/mp4">
@@ -178,7 +178,10 @@
         $('.carousel').carousel();
         //  $('.carousel-slider').carousel({ fullWidth: true });
         $(document).ready(function() {
-        $('#ltr').lightSlider({
+        $('[id="ltr"]').lightSlider({
+            ltr:true
+        });
+        $('#rtl').lightSlider({
             ltr:true
         });
 });
