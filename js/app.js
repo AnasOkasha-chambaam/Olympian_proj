@@ -37,14 +37,32 @@ if(document.getElementById('m-form')!==null){
   
 }
 
-function fetchDat(){
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', '../API/BOXING VID.html', true);
-  xhr.onload = () => {
-    console.log(xhr.responseText)
-    console.log(xhr.status)
-  };
-  xhr.send();
+// function fetchDat(theApi){
+//   const xhr = new XMLHttpRequest();
+//   xhr.open('GET', `../API/${theApi}.html`, true);
+//   xhr.onload = () => {
+//     if(xhr.status === 200){
+//       let elmnts = document.createElement('html');
+//       elmnts.innerHTML = (xhr.responseText);
+//       let tr = (Array.from(elmnts.querySelectorAll('table tr')));
+//       let viddd = '';
+//       tr.forEach((one) => {
+//         console.log(one)
+//         let chil = Array.from(one.children);
+//             viddd += `
+//             <div class="carousel-item">
+//           <video class="responsive-video" controls>
+//             <source src="video/${chil[1].innerHTML}.mp4" type="video/mp4">
+//           </video>
+//           <p class="vid-title">${chil[2].innerHTML}</p>
+//         </div>
+//             `;
+//             document.querySelector('.fst-sect #ltr').innerHTML = ' ';
+//             document.querySelector('.fst-sect #ltr').innerHTML = viddd;
+//           })
+//     }
+//   };
+//   xhr.send();
 
-}
-fetchDat()
+// }
+// fetchDat('boxingvid')

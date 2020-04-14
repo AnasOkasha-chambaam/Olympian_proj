@@ -15,9 +15,41 @@
    <link rel="stylesheet" href="css/style.css">
 
 
-  <title>ORH | CONTACT</title>
+  <title>ORH | FREE RESOURCES</title>
 </head>
 <body>
+  <script>
+    function fetchDat(theApi, plce){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `../API/${theApi}.html`, true);
+  xhr.onload = () => {
+    if(xhr.status === 200){
+      let elmnts = document.createElement('html');
+      elmnts.innerHTML = (xhr.responseText);
+      let tr = (Array.from(elmnts.querySelectorAll('table tr')));
+      let viddd = '';
+      tr.forEach((one) => {
+        console.log(one)
+        let chil = Array.from(one.children);
+            viddd += `
+            <div class="carousel-item">
+          <video class="responsive-video" controls>
+            <source src="video/${chil[1].innerHTML}.mp4" type="video/mp4">
+          </video>
+          <p class="vid-title">${chil[2].innerHTML}</p>
+        </div>
+            `;
+            // document.querySelector(plce).innerHTML = ' ';
+            document.querySelector(plce).innerHTML = viddd;
+          })
+    }
+  };
+  xhr.send();
+
+}
+fetchDat('boxingvid', '.fst-sect #ltr')
+fetchDat('dietvid', '.sec-sect #ltr')
+  </script>
   <header class="header">
     <div class="m-container">
       <a href="contact.html">
@@ -37,7 +69,7 @@
     <div class="m-container">
       <img src="img/fstsectimg.png" alt="BOXING VIDEOS">
       <div id="ltr" class="vidss">
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
           <video class="responsive-video" controls>
             <source src="video/Video3.mp4" type="video/mp4">
           </video>
@@ -78,7 +110,7 @@
             <source src="video/Video3.mp4" type="video/mp4">
           </video>
           <p class="vid-title">Boxing Basic Techniques</p>
-        </div>
+        </div> -->
        
       </div>
     </div>
@@ -87,7 +119,7 @@
     <div class="m-container">
       <img src="img/secsectimg.png" alt="BOXING VIDEOS">
       <div id="ltr" class="vidss">
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
           <video class="responsive-video" controls>
             <source src="video/Video3.mp4" type="video/mp4">
           </video>
@@ -128,7 +160,7 @@
             <source src="video/Video3.mp4" type="video/mp4">
           </video>
           <p class="vid-title">Boxing Basic Techniques</p>
-        </div>       
+        </div>        -->
       </div>
       
       <!-- <div class="carousel">

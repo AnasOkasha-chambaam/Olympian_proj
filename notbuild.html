@@ -10,11 +10,11 @@
 
    <!--Let browser know website is optimized for mobile-->
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <link rel="stylesheet" href="css/lightslider.css">
    <script src="https://kit.fontawesome.com/f5cfca52f2.js" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="css/style.css">
 
-
-  <title>ORH | CONTACT</title>
+  <title>ORH | NOT BUILT YET</title>
 </head>
 <body>
   <header class="header">
@@ -25,8 +25,8 @@
       <h1 class="name"><span class="olym anim-cls">OLYMPIAN</span> <span class="remain anim-cls">RAMY HELMY</span></h1>
       <ul class="categ">
         <li class="catt" id="catt-1"><a class="transi" href="notbuild.html">SERVICES</a></li>
-        <li class="catt" id="catt-2"><a class="transi" href="notbuild.html">COURSES & PROGRAMS</a></li>
-        <li class="catt" id="catt-3"><a class="transi" href="notbuild.html">FREE RESOURCES</a></li>
+        <li class="catt" id="catt-2"><a class="transi" href="notbuild.html">COURSES</a></li>
+        <li class="catt" id="catt-3"><a class="transi" href="freeResources.html">FREE RESOURCES</a></li>
         <li class="catt" id="catt-4"><a class="transi" href="notbuild.html">GALLERY</a></li>
         <li class="catt" id="catt-5"><a href="contact.html">CONTACT US</a></li>
       </ul>
@@ -38,13 +38,36 @@
       <h1>SORRY, THIS PAGE IS NOT BUILT YET.</h1>
     </div>
   </section>
+  <div id="ltr" class="vidss heee">
+    <div class="carousel-item">
+      <video class="responsive-video" controls>
+        <source src="video/Video3.mp4" type="video/mp4">
+      </video>
+      <p class="vid-title">Boxing Basic Techniques</p>
+    </div>
+  </div>
   <footer class="footer">
     <div class="m-container">
       <p>ORH &copy; 2020. All rights reserved.</p>
     </div>
   </footer>
   <!--JavaScript at end of body for optimized loading-->
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/lightslider.js"></script>
       <script src="js/app.js"></script>
+      <script>
+        $('.carousel').carousel();
+        //  $('.carousel-slider').carousel({ fullWidth: true });
+        $(document).ready(function() {
+        $('[id="ltr"]').lightSlider({
+            ltr:true
+        });
+        $('#rtl').lightSlider({
+            ltr:true
+        });
+});
+      </script>
 </body>
 </html>
