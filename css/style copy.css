@@ -386,7 +386,7 @@ body {
 .third-sect .m-container {
   padding: 0 80px;
 }
-.tests {
+.third-sect .m-container .tests {
   width: 100%;
   /* padding: 0 20px; */
   margin: auto;
@@ -396,7 +396,7 @@ body {
   gap: 10px;
   /* grid-template-rows: repeat(auto-fit, minmax(300px, 1fr)); */
 }
-.tests .test a{
+.third-sect .m-container .tests .test a{
   margin: auto;
   /* padding: 40px; */
   width: 180px;
@@ -410,13 +410,13 @@ body {
   align-items: center;
 
 }
- .tests .test a img {
+.third-sect .m-container .tests .test a img {
   width: 90px;
   display: block;
   margin: auto;
   /* vertical-align: middle; */
 }
- .tests .test p {
+.third-sect .m-container .tests .test p {
   text-align: center;
   color: var(--wt-clr);
   font-family: var(--sec-font);
@@ -754,7 +754,6 @@ body {
   background-color: var(--wt-clr);
   color: var(--prim-clr);
   font-weight: bolder;
-  border-radius: 3px;
 }
 .packages .package p {
   display: block;
@@ -842,8 +841,8 @@ body {
   min-height: 630px;
   padding: 40px;
   padding-bottom: 50px;
-  font-family: var(--prim-font);
-  /* font-weight: bold; */
+  font-family: var(--sec-font);
+  font-weight: bold;
   color: var(--wt-clr);
 }
 
@@ -869,11 +868,6 @@ body {
   bottom: -20px;
   left: 2px;
 }
-#prem-cs-1 {background: url(../img/fifthcourssimg1.jpg) no-repeat center center/cover;}
-#prem-cs-2 {background: url(../img/fifthcourssimg2.jpg) no-repeat center center/cover;}
-#prem-cs-3 {background: url(../img/fifthcourssimg3.jpg) no-repeat center center/cover;}
-#prem-cs-4 {background: url(../img/fifthcourssimg4.jpg) no-repeat center center/cover;}
-#prem-cs-5 {background: url(../img/fifthcourssimg5.jpg) no-repeat center center/cover;}
 .prem-cs.bef.found::before {content: '* Suitable for Foundation / Beginners level';}
 .prem-cs.bef.adv::before {content: '* Suitable for Advanced level';}
 .fifth-cours .m-container .prem-css .prem-cs .whole-txt p{display: block;padding-left: 4px}
@@ -885,23 +879,18 @@ body {
   right: 8px;
   color: var(--prim-clr);
   padding: 4px;
-  border-radius: 4px;
 }
 .fifth-cours .m-container .prem-css .prem-cs p.titl {
   padding: 3px;
   background-color: var(--prim-clr);
   opacity: 0.81;
-  font-family: Copperplate Gothic Bold;
-  font-size: 23px;
 }
 .fifth-cours .m-container .prem-css .prem-cs p.disc,
 .fifth-cours .m-container .prem-css .prem-cs p.mat,
 .fifth-cours .m-container .prem-css .prem-cs p.vid,
 .fifth-cours .m-container .prem-css .prem-cs p.pdf {
   font-size: 13px;
-  position: relative;
-  font-family: Century Gothic;
-  font-weight: bold;
+  position: relative
 }
 .fifth-cours .m-container .prem-css .prem-cs p.mat::before {
   content: '';
@@ -1082,7 +1071,7 @@ div.titl > div.line {
 .third-serv .m-container {
   background: url(../img/thirdservback.jpg) no-repeat center center/cover;
   padding: 30px;
-  min-height: 680px;
+  min-height: 770px;
   font-family: var(--sec-font);
   color: var(--wt-clr);
 }
@@ -1100,7 +1089,6 @@ div.titl > div.line {
   margin: 7px auto;
   height: 40px;
 }
-.third-serv .m-container .ansrs .ansr p {font-size: 15px;}
 .why-us .ansrs .ansr > img {
   width: 50%;
 }
@@ -1136,8 +1124,7 @@ div.titl > div.line {
   font-weight: bold;
 }
 
-.fifth-serv .m-container .tests .test a {border: none;}
-.fifth-serv .m-container .tests .test p {background: none; color: var(--wt-clr)}
+
 /* SERIVCES END */
 /* FOOTER ST */
 .footer {
@@ -1241,85 +1228,6 @@ img.sec-anim-cls {
 a.to-prim {
   transform: translateY(100px) !important ;
   opacity: 0 !important;
-}
-
-.benefits-title > p {
-  transform: translateY(80px);
-  opacity: 0;
-}
-.benefits-title > img {
-  transform: translate(-80px);
-  opacity: 0;
-}
-.benefits-txt-container .bnfts-txt .bnfts .bnft {
-  transform: translateX(-100px);
-  opacity: 0;
-}
-.third-cours .m-container .packages .package {
-  transform: translateY(100px) scale(0);
-  opacity: 0;
-}
-.third-cours .m-container .packages .package:hover {
-  transform: scale(1.1);
-}
-.fth-cours > img {
-  transform: translateX(-100px);
-  opacity: 0;
-}
-.fth-cours > p {
-  transform: translateX(150px);
-  opacity: 0;
-  display: inline-block;
-}
-.fifth-cours .m-container .prem-css .prem-cs {
-  transform: translate(-200px, 200px);
-  opacity: 0;
-}
-.sth-cours .m-container .reasons .rsns .rsn {
-  transform: translateY(100px);
-  opacity: 0;
-}
-.ansrs .ansr.fst-anim-this {
-  transform: rotateX(180deg) scale(0.01);
-  opacity: 0;
-}
-.sec-serv .m-container > img {display: block;transform: scaleX(0.001)}
-.fth-serv .m-container .ansrs .ansr.third-anim-this { transform: scale(1.7);opacity: 0}
-.fth-serv .m-container .ansrs .ansr.third-anim-this:hover p { color: var(--prim-clr)}
-.anim-here {
-  animation-name: animaate;
-  animation-duration: 0.6s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-@keyframes animaate {
-  to {
-    transform: scale(1) translate(0) rotate(0);
-    opacity: 1;
-  }
-}
-#now {
-  animation-name: nowanim;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  display: inline-block;
-}
-@keyframes nowanim {
-
-  40% {
-    transform: scale(0.9);
-  }
-  60% {
-    transform: scale(1.1);
-  }
-  80% {
-    transform: scale(0.9);
-  }
-  100% { 
-    transform: scale(1);
-  }
 }
 /* ANIMATION END */
 

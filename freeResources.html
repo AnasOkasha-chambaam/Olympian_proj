@@ -16,8 +16,6 @@
 
 
   <title>ORH | FREE RESOURCES</title>
-</head>
-<body>
   <script>
     function fetchDat(theApi, plce){
   const xhr = new XMLHttpRequest();
@@ -50,6 +48,40 @@
 fetchDat('boxingvid', '.fst-sect #ltr')
 fetchDat('dietvid', '.sec-sect #ltr')
   </script>
+</head>
+<body>
+  <!-- <script>
+    function fetchDat(theApi, plce){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `../API/${theApi}.html`, true);
+  xhr.onload = () => {
+    if(xhr.status === 200){
+      let elmnts = document.createElement('html');
+      elmnts.innerHTML = (xhr.responseText);
+      let tr = (Array.from(elmnts.querySelectorAll('table tr')));
+      let viddd = '';
+      tr.forEach((one) => {
+        console.log(one)
+        let chil = Array.from(one.children);
+            viddd += `
+            <div class="carousel-item">
+          <video class="responsive-video" controls>
+            <source src="video/${chil[1].innerHTML}.mp4" type="video/mp4">
+          </video>
+          <p class="vid-title">${chil[2].innerHTML}</p>
+        </div>
+            `;
+            // document.querySelector(plce).innerHTML = ' ';
+            document.querySelector(plce).innerHTML = viddd;
+          })
+    }
+  };
+  xhr.send();
+
+}
+fetchDat('boxingvid', '.fst-sect #ltr')
+fetchDat('dietvid', '.sec-sect #ltr')
+  </script> -->
   <header class="header">
     <div class="m-container">
       <a href="contact.html">
@@ -57,8 +89,8 @@ fetchDat('dietvid', '.sec-sect #ltr')
       </a>
       <h1 class="name"><span class="olym anim-cls">OLYMPIAN</span> <span class="remain anim-cls">RAMY HELMY</span></h1>
       <ul class="categ">
-        <li class="catt" id="catt-1"><a class="transi" href="notbuild.html">SERVICES</a></li>
-        <li class="catt" id="catt-2"><a class="transi" href="notbuild.html">COURSES</a></li>
+        <li class="catt" id="catt-1"><a class="transi" href="services.html">SERVICES</a></li>
+        <li class="catt" id="catt-2"><a class="transi" href="courses.html">COURSES</a></li>
         <li class="catt crrnt" id="catt-3"><a class="transi" href="freeResources.html">FREE RESOURCES</a></li>
         <li class="catt" id="catt-4"><a class="transi" href="notbuild.html">GALLERY</a></li>
         <li class="catt" id="catt-5"><a href="contact.html">CONTACT US</a></li>
