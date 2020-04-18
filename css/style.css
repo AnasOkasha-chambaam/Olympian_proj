@@ -1139,6 +1139,221 @@ div.titl > div.line {
 .fifth-serv .m-container .tests .test a {border: none;}
 .fifth-serv .m-container .tests .test p {background: none; color: var(--wt-clr)}
 /* SERIVCES END */
+
+/* HOME ST */
+.fst-home .m-container {
+  background: url(../img/fsthomeback.jpg) no-repeat center center/cover;
+  /* background-attachment: fixed; */
+  height: 340px;
+  position: relative;
+}
+.fst-home .m-container::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(240, 78, 86, 0.479);
+  position: absolute;
+  top: 0;bottom: 0;left: 0;right: 0;
+}
+.sec-home {
+  border-top:4px solid var(--wt-clr);
+  border-bottom:4px solid var(--wt-clr);
+}
+.sec-home .m-container {
+  height: 800px;
+  width: 100%;
+}
+.sec-home .m-container .right-side img.titlpng {
+  max-width: 420px;
+  position: absolute;
+  height: auto !important;
+  top: 40px;
+  left: 0;
+  right: 0;
+  display: block;
+  margin: auto;
+}
+.third-home .m-container {
+  background: url(../img/thirdhomeback.jpg);
+  position: relative;
+    min-height: 340px;
+}
+.third-home .m-container img.txt {
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: 970px;
+}
+.third-home .m-container img.png {
+  width: 680px;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+}
+.fth-home {border-top: 4px solid var(--wt-clr);position: relative;}
+.fth-home::before {
+  content: '';
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  width: 140px;
+  height: 150px;
+  position: absolute;
+  top: -100px;
+  left: 460px;
+}
+.fth-home::after {
+  content: '';
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  width: 140px;
+  height: 150px;
+  position: absolute;
+  top: -110px;
+  left: 480px;
+  opacity: 0.38;
+}
+.fth-home .m-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  padding: 30px 20px;
+  background-color: #292828;
+  font-family: var(--sec-font);
+}
+.fth-home .m-container .leftimg  {padding-left: 100px}
+.fth-home .m-container .leftimg img {width: 600px}
+.right-reasns {
+  display: grid;
+  justify-content: center;
+  padding-top: 40px;
+}
+.right-reasns .boxing-rsns {
+  padding: 10px 20px;
+  background-color: var(--wt-clr);
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: -15px -27px var(--prim-clr);
+  width: 290px;
+  position: relative;
+}
+.right-reasns .boxing-rsns::before {
+  content: 'WHY BOXING ?!';
+  position: absolute;
+  top: -50px;
+  color: var(--wt-clr);
+  font-size: 32px;
+
+}
+.right-reasns .boxing-rsns .boxing-rsn {
+  display: grid;
+  grid-template-columns: 30px auto;
+  margin: 6px 0;
+}
+.right-reasns > p {
+  font-weight: bold;
+  color: white;
+  font-size: 32px;
+  margin-left: -40px;
+}
+.right-reasns > p > span {color: var(--sec-clr)}
+.right-reasns .boxing-rsns .boxing-rsn img {width: 25px}
+
+.fifth-home .m-container {
+  background: url(../img/fifthhomeback.jpg) no-repeat center center/cover;
+  height: 421px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-right: 20px;
+}
+.fifth-home .m-container img { width: 100%}
+.fifth-home .m-container img.titl { align-self: center;width: 90%;justify-self: end;}
+
+
+.sixth-home {position: relative;}
+.sixth-home .m-container {
+  background: url(../img/sixthhomeback.jpg) no-repeat center center/cover;
+  height: 885px;
+  font-size: 22px;
+  font-family: Century Gothic;
+  color: var(--wt-clr);
+  display: grid;
+  justify-content: end;
+  grid-template-rows: min-content auto;
+}
+.sixth-home .m-container .achievements {
+  width: max-content;
+  margin-left: 80px;
+}
+.sixth-home .m-container .achievements .achievement {
+  margin-bottom: 17px;
+}
+.sixth-home::before {
+  content: '';
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  width: 140px;
+  height: 150px;
+  position: absolute;
+  top: -100px;
+  right: 60px;
+}
+.sixth-home::after {
+  content: '';
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  width: 140px;
+  height: 150px;
+  position: absolute;
+  top: -110px;
+  right: 50px;
+  opacity: 0.38;
+}
+
+.svnth-home .m-container {
+  background: url(../img/svnthhomeback.jpg) no-repeat center center/cover;
+  border-top: 5px solid var(--wt-clr);
+  border-bottom: 5px solid var(--wt-clr);
+  padding: 10px 0;
+}
+.svnth-home .m-container > img.txt {
+  display: block;
+  margin: auto;
+}
+
+.eith-home .m-container {
+  background: url(../img/eithhomeback.jpg) no-repeat center center/cover;
+  height: 335px;
+  position: relative;
+}
+.eith-home .m-container img {
+  position: absolute;
+}
+.eith-home .m-container img.titl {
+  width: 340px;
+  bottom: 10px;
+}
+.eith-home .m-container img.png {
+  width: 590px;
+    right: -100px;
+    top: 35%;
+}
+
+.ninth-home {
+  border-top: 5px solid var(--sec-clr);
+  border-bottom: 5px solid var(--sec-clr);
+}
+.ninth-home .m-container {
+  background: url(../img/ninthhomeback.jpg) no-repeat center center/cover;
+  min-height: 300px;
+  display: grid;
+  align-items: center;
+}
+.ninth-home .m-container .ansrs .ansr:hover p{color: var(--sec-clr) !important}
+.ninth-home .m-container .ansrs .ansr p{
+  color: var(--wt-clr);
+  background: linear-gradient(transparent 50%, rgba(240, 78, 86, 0.404) 20%);
+
+}
+
+/* .fst-home .m-container > img {width: 100%;} */
+
+
+/* HOME END */
+
 /* FOOTER ST */
 .footer {
   display: block;
@@ -1286,6 +1501,19 @@ a.to-prim {
 .sec-serv .m-container > img {display: block;transform: scaleX(0.001)}
 .fth-serv .m-container .ansrs .ansr.third-anim-this { transform: scale(1.7);opacity: 0}
 .fth-serv .m-container .ansrs .ansr.third-anim-this:hover p { color: var(--prim-clr)}
+
+.sec-home .m-container .right-side img.titlpng {display: block;transform: rotateZ(180deg);opacity: 0;}
+.third-home .m-container img.txt {transform: translateY(-120px) rotateZ(-40deg);opacity: 0;}
+.third-home .m-container img.png {transform: translateX(120px);opacity: 0;}
+.boxing-rsns .boxing-rsn {
+  transform: translateX(-120px);
+  opacity: 0;
+}
+.fifth-home .m-container img.txt {transform: scaleY(0.01);}
+.fifth-home .m-container img.titl {transform: scale(1.4);opacity: 0;}
+.achievements .achievement {
+  transform: translateY(120px);opacity: 0;
+}
 .anim-here {
   animation-name: animaate;
   animation-duration: 0.6s;

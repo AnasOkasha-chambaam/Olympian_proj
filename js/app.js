@@ -18,6 +18,7 @@ animDelayer('.del-2', 0.3)
 animDelayer('.del-3', 0.3)
 animDelayer('.del-4', 0.3)
 animDelayer('.del-5', 2)
+animDelayer('.del-6', 0.3)
 
 class UI {
   static testView(x, y){
