@@ -1335,6 +1335,7 @@ div.titl > div.line {
 .ninth-home {
   border-top: 5px solid var(--sec-clr);
   border-bottom: 5px solid var(--sec-clr);
+  position: relative;
 }
 .ninth-home .m-container {
   background: url(../img/ninthhomeback.jpg) no-repeat center center/cover;
@@ -1348,7 +1349,25 @@ div.titl > div.line {
   background: linear-gradient(transparent 50%, rgba(240, 78, 86, 0.404) 20%);
 
 }
-
+.ninth-home::before {
+  content: '';
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  width: 140px;
+  height: 150px;
+  position: absolute;
+  top: -100px;
+  left: 460px;
+}
+.ninth-home::after {
+  content: '';
+  background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
+  width: 140px;
+  height: 150px;
+  position: absolute;
+  top: -110px;
+  left: 480px;
+  opacity: 0.38;
+}
 /* .fst-home .m-container > img {width: 100%;} */
 
 
