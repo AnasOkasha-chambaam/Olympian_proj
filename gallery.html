@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--Import Google Icon Font-->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!--Import materialize.css-->
+   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+   <!--Let browser know website is optimized for mobile-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <script src="https://kit.fontawesome.com/f5cfca52f2.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/swiper.min.css">
+
+   <!-- Demo styles -->
+   <style>
+     body {
+       background: #fff;
+       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+       font-size: 14px;
+       color:#000;
+       margin: 0;
+       padding: 0;
+     }
+     .swiper-container {
+       width: 100%;
+       padding-top: 50px;
+       padding-bottom: 50px;
+     }
+     .swiper-slide {
+       background-position: center;
+       background-size: cover;
+       width: 300px;
+       height: 300px;
+ 
+     }
+   </style>
+
+  <title>ORH | GALLERY</title>
+</head>
+<body>
+  <header class="header">
+    <div class="m-container">
+      <a href="home.html">
+        <img src="img/logo.jpg" alt="HOME PAGE" class="main-img anim-cls">
+      </a>
+      <h1 class="name"><span class="olym anim-cls">OLYMPIAN</span> <span class="remain anim-cls">RAMY HELMY</span></h1>
+      <ul class="categ">
+        <li class="catt" id="catt-1"><a class="transi" href="services.html">SERVICES</a></li>
+        <li class="catt" id="catt-2"><a class="transi" href="courses.html">COURSES</a></li>
+        <li class="catt" id="catt-3"><a class="transi" href="freeResources.html">FREE RESOURCES</a></li>
+        <li class="catt crrnt" id="catt-4"><a class="transi" href="gallery.html">GALLERY</a></li>
+        <li class="catt" id="catt-5"><a href="contact.html">CONTACT US</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="fst-gallery" style="background: linear-gradient(45deg,#f04e56 30%,#fcd729 60%,#f04e56 60%);">
+    <!-- Swiper -->
+    <div class="swiper-container" >
+     <div class="swiper-wrapper" id="gallery-categ">
+       <div class="swiper-slide" id="get-pics-1" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics-2" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics-3" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+     </div>
+     <!-- Add Pagination -->
+     <div class="swiper-pagination"></div>
+   </div>
+  </section>
+  <section class="sec-gallery">
+    <div class="imgs" id="show-imgs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));gap: 4px">
+
+    </div>
+  </section>
+  <div id="get-pics-1-imgs" style="display: none;">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+  </div>
+
+
+  <footer class="footer">
+    <div class="m-container">
+      <p>ORH &copy; 2020. All rights reserved.</p>
+    </div>
+  </footer>
+  <!--JavaScript at end of body for optimized loading-->
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/app.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows : true,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+      const showImgs = document.getElementById('show-imgs');
+      const swippper = document.getElementById('gallery-categ');
+      let swipechild = Array.from(swippper.children),
+          allim = '';
+            swippper.addEventListener('mouseup', (e) => {
+              console.log('humm');
+              console.log('hey');
+              swipechild.forEach((one) => {
+                if(one.classList.contains('swiper-slide-active')){
+                  showImgs.innerHTML = document.getElementById(`${one.id}-imgs`).innerHTML
+                }
+              })
+            })
+    </script>
+  </body>
+</html>

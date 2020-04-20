@@ -9,16 +9,16 @@ function animDelayer(cls,tm){
   one.style.animationDelay = `${(ind*0.2)+tm}s`
 })
 }
-animDelayer('.catt', 1);
-animDelayer('.sec-anim-cls', 2)
-animDelayer('a.to-prim', 1)
-animDelayer('.t-here', 2)
-animDelayer('.del-1', 0.3)
-animDelayer('.del-2', 0.3)
-animDelayer('.del-3', 0.3)
-animDelayer('.del-4', 0.3)
-animDelayer('.del-5', 2)
-animDelayer('.del-6', 0.3)
+animDelayer('.del-1', 0.1)
+// animDelayer('.catt', 1);
+// animDelayer('.sec-anim-cls', 2)
+// animDelayer('a.to-prim', 1)
+// animDelayer('.t-here', 2)
+// animDelayer('.del-2', 0.3)
+// animDelayer('.del-3', 0.3)
+// animDelayer('.del-4', 0.3)
+// animDelayer('.del-5', 2)
+// animDelayer('.del-6', 0.3)
 
 class UI {
   static testView(x, y){

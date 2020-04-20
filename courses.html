@@ -16,6 +16,74 @@
 
 
   <title>ORH | COURSES</title>
+  <script>
+    function fetchDat(theApi, plce){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `../API/${theApi}.html`, true);
+  xhr.onload = () => {
+    if(xhr.status === 200){
+      // console.log('hey')
+      
+      let premModals = document.createElement('div');
+          premModals.id = 'prem-css-modals'
+      let elmnts = document.createElement('html');
+      elmnts.innerHTML = (xhr.responseText);
+      let tr = (Array.from(elmnts.querySelectorAll('table tr')));
+      let viddd = '',
+          modals = '';
+      tr.forEach((one,inde) => {
+        let chil = Array.from(one.children);
+            viddd += `
+        <li class="prem-cs bef found fth-anim-this six-anim-this del-3" id="prem-cs-${chil[0].innerHTML}" style="  background: url(../img/${chil[1].innerHTML}.jpg) no-repeat center center/cover; ">
+          <span class="befr"> * Suitable for ${chil[12].innerHTML} level</span>
+          <div class="whole-txt">
+            <p class="titl"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[2].innerHTML}</a></p>
+            <p class="disc">${chil[3].innerHTML}</p>
+            <p class="mat">COURSE MATERIAL</p>
+            <p class="vid">
+              <span class="vid-num">${chil[4].innerHTML}</span> videos
+              - <span class="min-num">${chil[6].innerHTML}</span> minutes
+            </p>
+            <p class="pdf">PDF - <span class="pages-num">${chil[9].innerHTML}</span> pages</p>
+          </div>
+          <span class="aftr"> ${chil[11].innerHTML} </span>
+
+        </li>
+            `;
+            modals += `
+            <div id="prem-cs-pack-${chil[0].innerHTML}" class="modal modal-fixed-footer">
+      <div class="modal-content package-modal-cont">
+        <div class="imag">
+          <img src="img/${chil[1].innerHTML}.jpg">
+        </div>
+       <div class="txt">
+         <h4>${chil[2].innerHTML}</h4>
+         <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
+         </p>
+       </div>
+      </div>
+      <div class="modal-footer package-btns">
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
+        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
+        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>${chil[11].innerHTML}</span></a>
+      </div>
+    </div>
+            `;
+
+            // document.querySelector(plce).innerHTML = ' ';
+            document.querySelector(plce).innerHTML = viddd;
+            premModals.innerHTML = modals;
+            document.getElementById('js-modals').appendChild(premModals);
+            $('.modal').modal();
+          })
+    }
+  };
+  xhr.send();
+
+}
+  fetchDat('premiumcourses', '#prem-css')
+  </script>
 </head>
 <body>
   <header class="header">
@@ -28,7 +96,7 @@
         <li class="catt" id="catt-1"><a class="transi" href="services.html">SERVICES</a></li>
         <li class="catt crrnt" id="catt-2"><a class="transi" href="courses.html">COURSES</a></li>
         <li class="catt" id="catt-3"><a class="transi" href="freeResources.html">FREE RESOURCES</a></li>
-        <li class="catt" id="catt-4"><a class="transi" href="notbuild.html">GALLERY</a></li>
+        <li class="catt" id="catt-4"><a class="transi" href="gallery.html">GALLERY</a></li>
         <li class="catt" id="catt-5"><a href="contact.html">CONTACT US</a></li>
       </ul>
     </div>
@@ -53,20 +121,20 @@
       </div>
     </div>
   </section>
-  <section class="sec-cours">
+  <section class="sec-cours" id="personal-coaching">
     <div class="m-container">
       <div class="benefits-title">
-        <p class="fst-anim-this del-1">ONLINE PERSONAL COACHING</p>
-        <img src="img/seccourspng.png" class="fst-anim-this del-1" alt="ENJOY OUR PERSONALIZE FITNESS / BOXING PROGRAMS">
+        <p class="fst-anim-this six-anim-this del-1">ONLINE PERSONAL COACHING</p>
+        <img src="img/seccourspng.png" class="fst-anim-this six-anim-this del-1" alt="ENJOY OUR PERSONALIZE FITNESS / BOXING PROGRAMS">
       </div>
       <div class="benefits-txt-container">
         <div class="bnfts-txt">
           <ul class="bnfts">
-            <li class="bnft fst-anim-this del-1" id="bnft-1"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Personalized programs</span>  to achieve your fitness and health goals.</p></li>
-            <li class="bnft fst-anim-this del-1" id="bnft-2"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">No time constraints</span>  - train at anytime you want.</p></li>
-            <li class="bnft fst-anim-this del-1" id="bnft-4"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Contact</span>  your <span class="prpl">instructor</span>  directly if you have any concerns or <span class="prpl">need advice.</span> </p></li>
-            <li class="bnft fst-anim-this del-1" id="bnft-3"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Track</span>  your <span class="prpl">progress</span> weekly with your personal coach.</p></li>
-            <li class="bnft fst-anim-this del-1" id="bnft-5"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Go at our own pace</span>  - there is <span class="prpl">no pressure</span> to keep up with people around.</p></li>
+            <li class="bnft fst-anim-this six-anim-this del-1" id="bnft-1"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Personalized programs</span>  to achieve your fitness and health goals.</p></li>
+            <li class="bnft fst-anim-this six-anim-this del-1" id="bnft-2"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">No time constraints</span>  - train at anytime you want.</p></li>
+            <li class="bnft fst-anim-this six-anim-this del-1" id="bnft-4"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Contact</span>  your <span class="prpl">instructor</span>  directly if you have any concerns or <span class="prpl">need advice.</span> </p></li>
+            <li class="bnft fst-anim-this six-anim-this del-1" id="bnft-3"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Track</span>  your <span class="prpl">progress</span> weekly with your personal coach.</p></li>
+            <li class="bnft fst-anim-this six-anim-this del-1" id="bnft-5"><img src="img/seccourscheckbox.png"> <p> <span class="prpl">Go at our own pace</span>  - there is <span class="prpl">no pressure</span> to keep up with people around.</p></li>
           </ul>
         </div>
       </div>
@@ -75,41 +143,42 @@
   <div class="third-cours">
     <div class="m-container">
       <p class="titl">PACKAGES</p>
-      <ul class="packages">
-        <li class="package sec-anim-this del-2 bef">
-          <img src="img/pack1.jpg" alt="">
-          <p>
-            <span class="pln">Plan A</span> 
-            <span class="sess">12 sessions</span></p> 
-          <span class="pric">$$$$</span>
+      <ul class="packages a-style-hover">
+        <li class="package sec-anim-this six-anim-this del-2 bef" id="#pack-1">
+            <img src="img/pack1.jpg" alt="">
+            <p>
+              <span class="pln"><a href="#package-1" class="modal-trigger" style="color:inherit">Plan A</a></span> 
+              <span class="sess">12 sessions</span></p> 
+            <span class="pric">$$$$</span>
         </li>
-        <li class="package sec-anim-this del-2 bef af">
-          <img src="img/pack2.jpg" alt="">
-          <p>
-            <span class="pln">Plan B</span> 
-            <span class="sess">24 sessions</span></p> 
-          <span class="pric">$$$$</span>
+        <li class="package sec-anim-this six-anim-this del-2 bef af">
+            <img src="img/pack2.jpg" alt="">
+            <p>
+              <span class="pln"><a href="#package-2" class="modal-trigger" style="color:inherit">Plan B</a></span> 
+              <span class="sess">24 sessions</span></p> 
+            <span class="pric">$$$$</span>
         </li>
-        <li class="package sec-anim-this del-2 afr">
-          <img src="img/pack3.jpg" alt="">
-          <p>
-            <span class="pln">Plan C</span> 
-            <span class="sess">36 sessions</span></p> 
-          <span class="pric">$$$$</span>
+        <li class="package sec-anim-this six-anim-this del-2 afr">
+            <img src="img/pack3.jpg" alt="">
+            <p>
+              <span class="pln"><a href="#package-3" class="modal-trigger" style="color:inherit">Plan C</a></span> 
+              <span class="sess">36 sessions</span></p> 
+            <span class="pric">$$$$</span>
+            
         </li>
       </ul>
     </div>
   </div>
-  <section class="fth-cours">
-    <img src="img/fthcourspng.png" class="third-anim-this" style="width: 300px;" alt="">
-    <p class="third-anim-this">PREMIUM COURSES</p>
+  <section class="fth-cours" id="prem-courses">
     <div class="m-container">
+      <img src="img/fthcourspng.png" class="third-anim-this six-anim-this" style="width: 300px;" alt="">
+      <p class="third-anim-this six-anim-this">PREMIUM COURSES</p>
     </div>
   </section>
   <section class="fifth-cours">
     <div class="m-container">
-      <ul class="prem-css">
-        <li class="prem-cs bef found fth-anim-this del-3" id="prem-cs-1">
+      <ul class="prem-css a-style-hover" id="prem-css">
+        <!-- <li class="prem-cs bef found fth-anim-this del-3" id="prem-cs-1">
           <div class="whole-txt">
             <p class="titl">HOW TO BOX IN 10 DAYS?</p>
             <p class="disc">Learn basic boxing techniques and fundementals of boxing.</p>
@@ -170,31 +239,92 @@
           </div>
         </li>
 
-        
+         -->
       </ul>
     </div>
   </section>
-  <section class="sth-cours">
+  <section class="sth-cours" id="nutrition-plans">
     <div class="m-container">
       <img src="img/sthcourspng.png">
       <div class="reasons">
         <ul class="rsns">
-          <li class="rsn fifth-anim-this del-4" id="rsn-1"><img src="img/rsnschckbx.png"> <p> Customized diet plan to achieve your targets.</p></li>
-          <li class="rsn fifth-anim-this del-4" id="rsn-2"><img src="img/rsnschckbx.png"> <p> Healthy body weight.</p></li>
-          <li class="rsn fifth-anim-this del-4" id="rsn-4"><img src="img/rsnschckbx.png"> <p> Boosts your energy level. </p></li>
-          <li class="rsn fifth-anim-this del-4" id="rsn-3"><img src="img/rsnschckbx.png"> <p> Strengthens muscles & bones.</p></li>
-          <li class="rsn fifth-anim-this del-4" id="rsn-5"><img src="img/rsnschckbx.png"> <p> Improves physical & mental health.</p></li>
+          <li class="rsn fifth-anim-this six-anim-this del-4" id="rsn-1"><img src="img/rsnschckbx.png"> <p> Customized diet plan to achieve your targets.</p></li>
+          <li class="rsn fifth-anim-this six-anim-this del-4" id="rsn-2"><img src="img/rsnschckbx.png"> <p> Healthy body weight.</p></li>
+          <li class="rsn fifth-anim-this six-anim-this del-4" id="rsn-4"><img src="img/rsnschckbx.png"> <p> Boosts your energy level. </p></li>
+          <li class="rsn fifth-anim-this six-anim-this del-4" id="rsn-3"><img src="img/rsnschckbx.png"> <p> Strengthens muscles & bones.</p></li>
+          <li class="rsn fifth-anim-this six-anim-this del-4" id="rsn-5"><img src="img/rsnschckbx.png"> <p> Improves physical & mental health.</p></li>
         </ul>
     </div>
     <p>Click <a href="#!">HERE </a>& Enjoy your Meal Plans.</p>
     </div>
   </section>
- 
   <footer class="footer">
     <div class="m-container">
       <p>ORH &copy; 2020. All rights reserved.</p>
     </div>
   </footer>
+  <!-- PACKAGES MODAL -->
+  <div id="coded-modals">
+    <!-- hard coded -->
+    <div id="package-1" class="modal modal-fixed-footer">
+      <div class="modal-content package-modal-cont">
+        <div class="imag">
+          <img src="img/pack1.jpg">
+        </div>
+       <div class="txt">
+         <h4>Plan A</h4>
+         <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
+         </p>
+       </div>
+      </div>
+      <div class="modal-footer package-btns">
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
+        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
+        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>$$$$</span></a>
+      </div>
+    </div>
+    <div id="package-2" class="modal modal-fixed-footer">
+      <div class="modal-content package-modal-cont">
+        <div class="imag">
+          <img src="img/pack2.jpg">
+        </div>
+       <div class="txt">
+         <h4>Plan B</h4>
+         <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
+         </p>
+       </div>
+      </div>
+      <div class="modal-footer package-btns">
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
+        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
+        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>$$$$</span></a>
+      </div>
+    </div>
+    <div id="package-3" class="modal modal-fixed-footer">
+      <div class="modal-content package-modal-cont">
+        <div class="imag">
+          <img src="img/pack3.jpg">
+        </div>
+       <div class="txt">
+         <h4>Plan C</h4>
+         <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
+         </p>
+       </div>
+      </div>
+      <div class="modal-footer package-btns">
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
+        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
+        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>$$$$</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- injected by js -->
+  <div id="js-modals">
+  </div>
+
   <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -202,28 +332,30 @@
       <script src="js/app.js"></script>
       <!-- <script src="js/appt.js"></script> -->
       <script>
-        $('.parallax').parallax();
-        $(document).ready(function(){
-          function showit(showAnim, num){
-          $(document).scroll(function(e) {
-            let v = Math.abs($(showAnim).position().top - $(window).height()*num);
-            let vv = $(this).scrollTop();
-              if( v > vv ) {
-                console.log('finally')
-              } else {
-                $(showAnim).addClass('anim-here')
-                // $('li.fst-anim-this').addClass('')
-                // $('p.fst-anim-this').addClass('anim-here')
-                // $('p.fst-anim-this').addClass('anim-here')
-              }
-            
-          })}
-          showit('.fst-anim-this', 1.6);
-          showit('.sec-anim-this', 2.3);
-          showit('.third-anim-this', 4);
-          showit('.fth-anim-this', 4);
-          showit('.fifth-anim-this', 5);
-        })
+        $('.modal').modal();
+        class UIA {
+    static testView(x, y){
+      var elmnts = Array.from(document.querySelectorAll(x)),
+    position,
+    windowHeigh = window.innerHeight;
+
+      elmnts.forEach((elmnt) => {
+      position = elmnt.getBoundingClientRect().top;
+      if(position - windowHeigh <= 10){
+        elmnt.classList.add(y)
+        
+      }
+    })
+  }
+
+}
+function test(){
+  UIA.testView('.six-anim-this', 'anim-here')
+  // console.log(elmnts2)
+}
+window.addEventListener('scroll', test );
+
+
       </script>
 </body>
 </html>

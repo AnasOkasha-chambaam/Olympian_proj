@@ -27,7 +27,7 @@
         <li class="catt crrnt" id="catt-1"><a class="transi" href="services.html">SERVICES</a></li>
         <li class="catt" id="catt-2"><a class="transi" href="courses.html">COURSES</a></li>
         <li class="catt" id="catt-3"><a class="transi" href="freeResources.html">FREE RESOURCES</a></li>
-        <li class="catt" id="catt-4"><a class="transi" href="notbuild.html">GALLERY</a></li>
+        <li class="catt" id="catt-4"><a class="transi" href="gallery.html">GALLERY</a></li>
         <li class="catt" id="catt-5"><a href="contact.html">CONTACT US</a></li>
       </ul>
     </div>
@@ -39,7 +39,7 @@
         <p>Why Choose Online Training</p>
       </div>
       <ul class="ansrs">
-        <li class="ansr fst-anim-this del-5 anim-here" id="ansr-1">
+        <li class="ansr fst-anim-this six-anim-this del-5 anim-here" id="ansr-1">
           <img src="img/ansrpng1.png">
           <p class="titl">
             Saves Mony
@@ -48,7 +48,7 @@
             No gym fees or long term subscriptions.
           </p>
         </li>
-        <li class="ansr fst-anim-this del-5 anim-here" id="ansr-1">
+        <li class="ansr fst-anim-this six-anim-this del-5 anim-here" id="ansr-1">
           <img src="img/ansrpng2.png">
           <p class="titl">
             Saves Time
@@ -57,7 +57,7 @@
             Time is not wasted going to the gym, you can train anywhere and at any time.
           </p>
         </li>
-        <li class="ansr fst-anim-this del-5 anim-here" id="ansr-1">
+        <li class="ansr fst-anim-this six-anim-this del-5 anim-here" id="ansr-1">
           <img src="img/ansrpng3.png">
           <p class="titl">
             Privacy
@@ -66,7 +66,7 @@
             Workout anywhere without feeling self-conscious.
           </p>
         </li>
-        <li class="ansr fst-anim-this del-5 anim-here" id="ansr-1">
+        <li class="ansr fst-anim-this six-anim-this del-5 anim-here" id="ansr-1">
           <img src="img/ansrpng4.png">
           <p class="titl">
             Personalized
@@ -80,7 +80,7 @@
   </section>
   <section class="sec-serv">
     <div class="m-container">
-      <img src="img/secservquote.png" class="sec-anim-this">
+      <img src="img/secservquote.png" class="sec-anim-this six-anim-this">
     </div>
   </section>
   <section class="third-serv">
@@ -125,7 +125,7 @@
             </p>
           </li>
         </ul>
-        <img src="../img/thirdservlines.png">
+        <img src="img/thirdservlines.png">
         <ul class="ansrs">
           <li class="ansr" id="ansr-1">
             <img src="img/thirdservwhyr1.png">
@@ -172,17 +172,17 @@
     <div class="m-container">
       <img src="img/fthservpng.png">
       <ul class="ansrs">
-        <li class="ansr third-anim-this del-1" id="ansr-1">
-          <a><img src="img/fthservserv1.jpg"> <p>Free Training</p> </a>
+        <li class="ansr third-anim-this six-anim-this del-1" id="ansr-1">
+          <a href="freeResources.html" target="_blank"><img src="img/fthservserv1.jpg"> <p>Free Training</p> </a>
         </li>
-        <li class="ansr third-anim-this del-1" id="ansr-1">
-          <a><img src="img/fthservserv2.jpg"> <p>Premium Courses</p> </a>
+        <li class="ansr third-anim-this six-anim-this del-1" id="ansr-1">
+          <a href="courses.html#prem-courses" target="_blank"><img src="img/fthservserv2.jpg"> <p>Premium Courses</p> </a>
         </li>
-        <li class="ansr third-anim-this del-1" id="ansr-1">
-          <a><img src="img/fthservserv3.jpg"> <p>Personal Coaching</p> </a>
+        <li class="ansr third-anim-this six-anim-this del-1" id="ansr-1">
+          <a href="courses.html#personal-coaching" target="_blank"><img src="img/fthservserv3.jpg"> <p>Personal Coaching</p> </a>
         </li>
-        <li class="ansr third-anim-this del-1" id="ansr-1">
-          <a><img src="img/fthservserv4.jpg"> <p>Nutrition Plans</p> </a>
+        <li class="ansr third-anim-this six-anim-this del-1" id="ansr-1">
+          <a href="courses.html#nutrition-plans" target="_blank"><img src="img/fthservserv4.jpg"> <p>Nutrition Plans</p> </a>
         </li>
         
       </ul>
@@ -219,24 +219,27 @@
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script src="js/app.js"></script>
       <script>
-        $(document).ready(function(){
-          function showit(showAnim, num){
-          $(document).scroll(function(e) {
-            let v = Math.abs($(showAnim).position().top - $(window).height()*num);
-            let vv = $(this).scrollTop();
-              if( v > vv ) {
-                console.log('finally')
-              } else {
-                $(showAnim).addClass('anim-here')
-                // $('li.fst-anim-this').addClass('')
-                // $('p.fst-anim-this').addClass('anim-here')
-                // $('p.fst-anim-this').addClass('anim-here')
-              }
-            
-          })}
-          showit('.sec-anim-this', 1)
-          showit('.third-anim-this', 3)
-        })
+        class UIA {
+    static testView(x, y){
+      var elmnts = Array.from(document.querySelectorAll(x)),
+    position,
+    windowHeigh = window.innerHeight;
+
+      elmnts.forEach((elmnt) => {
+      position = elmnt.getBoundingClientRect().top;
+      if(position - windowHeigh <= 10){
+        elmnt.classList.add(y)
+        
+      }
+    })
+  }
+
+}
+function test(){
+  UIA.testView('.six-anim-this', 'anim-here')
+  // console.log(elmnts2)
+}
+window.addEventListener('scroll', test );
 
         
       </script>
