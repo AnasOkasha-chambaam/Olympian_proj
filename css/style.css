@@ -1148,7 +1148,9 @@ div.titl > div.line {
 }
 .third-serv .m-container .ansrs .ansr p {font-size: 15px;}
 .why-us .ansrs .ansr > img {
-  width: 50%;
+  /* width: 50%; */
+  width: 64px;
+  height: 70px;
 }
 .why-us .ansrs .ansr .titl { color: var(--prim-clr);}
 
