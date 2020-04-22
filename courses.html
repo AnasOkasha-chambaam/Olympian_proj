@@ -16,7 +16,7 @@
 
 
   <title>ORH | COURSES</title>
-  <script>
+  <!-- <script>
     function fetchDat(theApi, plce){
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `../API/${theApi}.html`, true);
@@ -83,7 +83,7 @@
 
 }
   fetchDat('premiumcourses', '#prem-css')
-  </script>
+  </script> -->
 </head>
 <body>
   <header class="header">
@@ -101,7 +101,7 @@
       </ul>
     </div>
   </header>
-  <section class="fst-cours">
+  <!-- <section class="fst-cours">
     <div class="m-container">
       <div class="left-side">
         <img src="img/fstcoursimgleft.jpg" alt="Captin Ramy Helmy">
@@ -120,7 +120,27 @@
         </div>
       </div>
     </div>
+  </section> -->
+  <section class="fst-cours-edited">
+    <div class="m-container">
+      <div class="left-side">
+        <img src="img/fstcourspng.png" class="png">
+      </div>
+      <div class="right-side">
+        <img src="img/fstcoursimgright.jpg">
+        <div class="strt-txt">
+          <p>
+            Whatever your goals are
+          </p>
+          <p>
+            we will help you achieve them
+          </p>
+          <button class="start-btn">Start Training <span id="now">NOW</span></button>
+        </div>
+      </div>
+    </div>
   </section>
+  
   <section class="sec-cours" id="personal-coaching">
     <div class="m-container">
       <div class="benefits-title">
@@ -245,6 +265,7 @@
   </section>
   <section class="sth-cours" id="nutrition-plans">
     <div class="m-container">
+      <img src="img/sthcoursback.jpg" class="back">
       <img src="img/sthcourspng.png">
       <div class="reasons">
         <ul class="rsns">
@@ -256,8 +277,9 @@
         </ul>
     </div>
     <p>Click <a href="#!">HERE </a>& Enjoy your Meal Plans.</p>
-    </div>
-  </section>
+  </div>
+</section>
+
   <footer class="footer">
     <div class="m-container">
       <p>ORH &copy; 2020. All rights reserved.</p>
@@ -355,6 +377,73 @@ function test(){
 }
 window.addEventListener('scroll', test );
 
+    function fetchDat(theApi, plce){
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', `../API/${theApi}.html`, true);
+  xhr.onload = () => {
+    if(xhr.status === 200){
+      // console.log('hey')
+      
+      let premModals = document.createElement('div');
+          premModals.id = 'prem-css-modals'
+      let elmnts = document.createElement('html');
+      elmnts.innerHTML = (xhr.responseText);
+      let tr = (Array.from(elmnts.querySelectorAll('table tr')));
+      let viddd = '',
+          modals = '';
+      tr.forEach((one,inde) => {
+        let chil = Array.from(one.children);
+            viddd += `
+        <li class="prem-cs bef found fth-anim-this six-anim-this del-3" id="prem-cs-${chil[0].innerHTML}" style="  background: url(../img/${chil[1].innerHTML}.jpg) no-repeat center center/cover; ">
+          <span class="befr"> * Suitable for ${chil[12].innerHTML} level</span>
+          <div class="whole-txt">
+            <p class="titl"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[2].innerHTML}</a></p>
+            <p class="disc">${chil[3].innerHTML}</p>
+            <p class="mat">COURSE MATERIAL</p>
+            <p class="vid">
+              <span class="vid-num">${chil[4].innerHTML}</span> videos
+              - <span class="min-num">${chil[6].innerHTML}</span> minutes
+            </p>
+            <p class="pdf">PDF - <span class="pages-num">${chil[9].innerHTML}</span> pages</p>
+          </div>
+          <span class="aftr"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[11].innerHTML}</a></span>
+
+        </li>
+            `;
+            modals += `
+            <div id="prem-cs-pack-${chil[0].innerHTML}" class="modal modal-fixed-footer">
+      <div class="modal-content package-modal-cont">
+        <div class="imag">
+          <img src="img/${chil[1].innerHTML}.jpg">
+        </div>
+       <div class="txt">
+         <h4>${chil[2].innerHTML}</h4>
+         <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
+         </p>
+       </div>
+      </div>
+      <div class="modal-footer package-btns">
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
+        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
+        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>${chil[11].innerHTML}</span></a>
+      </div>
+    </div>
+            `;
+
+            // document.querySelector(plce).innerHTML = ' ';
+            document.querySelector(plce).innerHTML = viddd;
+            premModals.innerHTML = modals;
+            document.getElementById('js-modals').appendChild(premModals);
+            $('.modal').modal();
+          })
+    }
+  };
+  xhr.send();
+
+}
+  fetchDat('premiumcourses', '#prem-css')
+  
 
       </script>
 </body>

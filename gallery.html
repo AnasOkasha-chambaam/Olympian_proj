@@ -11,8 +11,8 @@
    <!--Let browser know website is optimized for mobile-->
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
    <script src="https://kit.fontawesome.com/f5cfca52f2.js" crossorigin="anonymous"></script>
-   <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/swiper.min.css">
+   <link rel="stylesheet" href="css/style.css">
 
    <!-- Demo styles -->
    <style>
@@ -23,18 +23,6 @@
        color:#000;
        margin: 0;
        padding: 0;
-     }
-     .swiper-container {
-       width: 100%;
-       padding-top: 50px;
-       padding-bottom: 50px;
-     }
-     .swiper-slide {
-       background-position: center;
-       background-size: cover;
-       width: 300px;
-       height: 300px;
- 
      }
    </style>
 
@@ -60,46 +48,126 @@
     <!-- Swiper -->
     <div class="swiper-container" >
      <div class="swiper-wrapper" id="gallery-categ">
-       <div class="swiper-slide" id="get-pics-1" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics-2" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics-3" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
-       <div class="swiper-slide" id="get-pics" style="background-image:url(img/SimpleAnimations.jpg)"></div>
+       <div class="swiper-slide" id="get-pics-1" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics-2" >
+        <img src="img/fifthcourssimg2.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics-3" >
+        <img src="img/fthservserv3.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
+       <div class="swiper-slide" id="get-pics" >
+        <img src="img/SimpleAnimations.jpg" style="width: 100%;" class="album-main">
+        <p class="album-titl">Album Title Here</p>
+      </div>
      </div>
      <!-- Add Pagination -->
      <div class="swiper-pagination"></div>
    </div>
   </section>
   <section class="sec-gallery">
-    <div class="imgs" id="show-imgs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));gap: 4px">
+    <div class="imgs crrnt-shown" id="show-imgs" >
+ 
+          <!-- MATERIAL BOX -->
+          <img src="img/SimpleAnimations.jpg" class="materialboxed" width="100%">
 
+          <!-- WITH CAPTION -->
+          <img src="img/SimpleAnimations.jpg" class="materialboxed" width="100%" data-caption="This is my awesome photo">
+    
     </div>
   </section>
   <div id="get-pics-1-imgs" style="display: none;">
     <img class="responsive-img" src="img/SimpleAnimations.jpg">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
-    <img src="img/SimpleAnimations.jpg" style="max-width: 100%">
+    <img src="img/SimpleAnimations.jpg" width="100%">
+    <img src="img/SimpleAnimations.jpg" width="100%">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+    <img src="img/SimpleAnimations.jpg">
+  </div>
+  <div id="get-pics-2-imgs" style="display: none;">
+    <img class="responsive-img" src="img/SimpleAnimations.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+    <img src="img/fifthcourssimg2.jpg">
+  </div>
+  <div id="get-pics-3-imgs" style="display: none;">
+    <img class="responsive-img" src="img/SimpleAnimations.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
+    <img src="img/fthservserv3.jpg">
   </div>
 
 
@@ -117,6 +185,9 @@
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script src="js/app.js"></script>
     <script>
+      
+      
+
       var swiper = new Swiper('.swiper-container', {
         effect: 'coverflow',
         grabCursor: true,
@@ -133,19 +204,44 @@
           el: '.swiper-pagination',
         },
       });
+      
       const showImgs = document.getElementById('show-imgs');
       const swippper = document.getElementById('gallery-categ');
       let swipechild = Array.from(swippper.children),
           allim = '';
-            swippper.addEventListener('mouseup', (e) => {
-              console.log('humm');
-              console.log('hey');
-              swipechild.forEach((one) => {
+          function testShown(one){
+            if(document.getElementById(`${one.id}-imgs`).classList.contains('crrnt-shown')){
+                    console.log('already-shown');
+                  } else {
+                  console.log('done');
+                  document.querySelector('.crrnt-shown').classList.remove('crrnt-shown')
+                  showImgs.innerHTML = document.getElementById(`${one.id}-imgs`).innerHTML;
+                  document.getElementById(`${one.id}-imgs`).classList.add('crrnt-shown')
+                  showImgs.className = `imgs ${one.id}-imgs`;
+                  Array.from(showImgs.children).forEach((elm)=> {
+                    elm.classList.add('materialboxed');
+                    $('.materialboxed').materialbox()
+                  });
+                  }
+          }
+          function showim(){
+            swipechild.forEach((one) => {
                 if(one.classList.contains('swiper-slide-active')){
-                  showImgs.innerHTML = document.getElementById(`${one.id}-imgs`).innerHTML
+                  testShown(one)
                 }
               })
+                 
+          }
+            swippper.addEventListener('mouseup', (e) => {
+              setTimeout(showim, 1000)
+              
             })
+            
+            // swippper.addEventListener('mousedown',(e) => {
+            //   showim();
+            // })
+            // mate()
+            
     </script>
   </body>
 </html>
