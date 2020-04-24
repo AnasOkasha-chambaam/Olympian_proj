@@ -135,7 +135,7 @@
           <p>
             we will help you achieve them
           </p>
-          <button class="start-btn">Start Training <span id="now">NOW</span></button>
+          <a href="#prem-courses" class="start-btn">Start Training <span id="now">NOW</span></a>
         </div>
       </div>
     </div>
@@ -355,6 +355,17 @@
       <!-- <script src="js/appt.js"></script> -->
       <script>
         $('.modal').modal();
+        $('a[href="#prem-courses"]').on('click', function(e) {
+  e.preventDefault()
+
+  $('html, body').animate(
+    {
+      scrollTop: $($(this).attr('href')).offset().top,
+    },
+    500,
+    'linear'
+  )
+})
         class UIA {
     static testView(x, y){
       var elmnts = Array.from(document.querySelectorAll(x)),

@@ -371,7 +371,7 @@ body {
   position: absolute;
   width: 140PX;
   height: 150px;
-  top: -32px;
+  top: -62px;
   right: 180px;
   background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
 }
@@ -380,7 +380,7 @@ body {
   position: absolute;
   width: 140PX;
   height: 150px;
-  top: -40px;
+  top: -70px;
   right: 159px;
   background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
   opacity: 0.4;
@@ -897,6 +897,7 @@ body {
 .fth-cours  img {
   bottom: 105px;
   width: 380px;
+  height: 75.2px;
   align-self: flex-end;
   margin: 10px 0;
 }
@@ -1066,9 +1067,13 @@ body {
 }
 .sth-cours .m-container > p {
   position: absolute;
+  text-align: center;
+  margin: auto;
+  left: 0;
+  right: 0;
   bottom: 1px;
   display: block;
-  font-size: 49px;
+  font-size: 40px;
   right: 0;
   padding-right: 80px;
 }
@@ -1891,4 +1896,48 @@ a.to-prim {
   .contact-showcase .m-container form .inpts {
     grid-template-columns: 1fr;
   }
+}
+
+/* FOR THE APPS */
+.modal-content {
+  background-color: var(--blue-drk-clr);
+  color: var(--wt-clr);
+}
+.fat-titl {
+  text-align: center;
+  padding: 20px;
+  color: var(--wt-clr);
+  background: var(--prim-clr);
+  width: max-content;
+  margin: auto;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--sec-font);
+  border-radius: 13px;
+}
+.fat-percentage .m-container form {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
+  gap: 10px;
+  padding-bottom: 40px;
+}
+.modal-footer .input-field {
+  display: inline-block;
+}
+
+.modal-footer input {
+  /* color: gray; */
+  /* color: #000101 !important; */
+  background-color: #333 !important;
+  /* opacity: 0.8; */
+  font-weight: bold;
+  /* height: 80% !important; */
+  padding-left: 10px;
+  /* float: left; */
+}
+.apps .modal-footer {
+  height: 96px !important;
+  background-color: var(--sec-clr);
+  padding: 10px
 }
