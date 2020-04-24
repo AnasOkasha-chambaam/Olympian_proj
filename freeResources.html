@@ -16,7 +16,7 @@
 
 
   <title>ORH | FREE RESOURCES</title>
-  <script>
+  <!-- <script>
     function fetchDat(theApi, plce){
   const xhr = new XMLHttpRequest();
   xhr.open('GET', `../API/${theApi}.html`, true);
@@ -27,7 +27,7 @@
       let tr = (Array.from(elmnts.querySelectorAll('table tr')));
       let viddd = '';
       tr.forEach((one) => {
-        console.log(one)
+        // console.log(one)
         let chil = Array.from(one.children);
             viddd += `
             <div class="carousel-item">
@@ -47,7 +47,7 @@
 }
 fetchDat('boxingvid', '.fst-sect #ltr')
 fetchDat('dietvid', '.sec-sect #ltr')
-  </script>
+  </script> -->
 </head>
 <body>
   <!-- <script>
@@ -237,18 +237,20 @@ fetchDat('dietvid', '.sec-sect #ltr')
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script src="js/lightslider.js"></script>
+      <script src="js/vidssapp.js"></script>
       <script src="js/app.js"></script>
       <script>
         $('.carousel').carousel();
         //  $('.carousel-slider').carousel({ fullWidth: true });
-        $(document).ready(function() {
-        $('[id="ltr"]').lightSlider({
-            ltr:true
-        });
-        $('#rtl').lightSlider({
-            ltr:true
-        });
-});
+        // $(document).ready(function() {
+        // $('[id="ltr"]').lightSlider({
+        //     ltr:true
+        // });
+        // $('#rtl').lightSlider({
+        //     ltr:true
+        // });
+// });
+
       </script>
 </body>
 </html>

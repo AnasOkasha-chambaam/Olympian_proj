@@ -53,7 +53,7 @@ body {
   display: block;
   margin: 11px auto;
   padding: 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 .header .m-container .name{
   grid-row: 1 / span 1;
@@ -481,6 +481,7 @@ body {
   grid-template-columns: 0.8fr 1.2fr;
 }
 .fst-cours .m-container .right-side {
+  background: url(../img/fstcoursrightback.jpg) no-repeat center center/cover;
   border-left: 3px solid var(--wt-clr);
 }
 .fst-cours .m-container .left-side, .fst-cours .m-container .right-side{
@@ -536,7 +537,7 @@ body {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   /* min-height: 1240px; */
-  height: 1000px
+  min-height: 1000px
 }
 .fst-cours-edited .m-container .left-side {
   height: 100%;
@@ -545,24 +546,28 @@ body {
 }
 .fst-cours-edited .m-container .left-side .png {margin-top: 70px;}
 .fst-cours-edited .m-container .right-side {
-  /* background: url(../img/fstcoursimgright.jpg) no-repeat center center/cover; */
-  position: relative;
+  background: url(../img/fstcoursrightback.jpg) no-repeat center center/cover;
+  /* position: relative; */
 }
 .fst-cours-edited .m-container .right-side img {
-  width: 100%;height: 100%;display: block;
-  position: absolute;
+  /* width: 100%;height: 100%; */
+  width: 90%;
+  margin: auto;
+  display: block;
+  /* position: absolute; */
 }
 .fst-cours-edited .m-container .right-side .strt-txt {
   width: 100%;
   text-align: center;
   font-family: var(--sec-font);
   /* font-size: 32px; */
-  font-size: 38px;
+  font-size: 39px;
   font-weight: bolder;
   color: var(--wt-clr);
   margin-bottom: 40px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 30px;
+  margin-top: -20px;
 }
 .fst-cours-edited .m-container .right-side .strt-txt p{
   display: block;
@@ -1038,7 +1043,8 @@ body {
     background: url(../img/sthcoursback.jpg) no-repeat center center/cover;
     /* height: 544px;
     width: 793px; */
-    min-height: 855px;
+    /* min-height: 855px; */
+    min-height: 623px;
     /* width: 823px; */
     margin: auto;
     position: relative;
@@ -1060,7 +1066,7 @@ body {
 }
 .sth-cours .m-container > p {
   position: absolute;
-  bottom: 10px;
+  bottom: 1px;
   display: block;
   font-size: 49px;
   right: 0;
@@ -1217,16 +1223,23 @@ div.titl > div.line {
 
 
 .sec-serv .m-container {
-  background: url(../img/secservback.jpg) no-repeat center center/cover;
+  background-color: #adaaaa;
+  /* background: url(../img/secservback.jpg) no-repeat center center/cover; */
   min-height: 390px;
   /* min-height: 390px; */
   overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .sec-serv .m-container > img {
-  float: right;
-  height: 90%;
-  margin: 10px;
-  margin-right: 40px;
+  /* float: right; */
+  height: 100%;
+  width: 100%;
+}
+.sec-serv .m-container > img.quote {
+  height: 96%;
+  width: 90%;
+  margin: auto;
 }
 
 .third-serv .m-container {
@@ -1504,7 +1517,7 @@ div.titl > div.line {
 }
 .eith-home .m-container img.png {
   width: 590px;
-    right: -100px;
+    right: 6px;
     top: 35%;
 }
 
@@ -1748,7 +1761,8 @@ a.to-prim {
   transform: rotateX(180deg) scale(0.01);
   opacity: 0;
 }
-.sec-serv .m-container > img {display: block;transform: scaleX(0.001);width: 34%;}
+.fth-serv .m-container {padding-bottom: 40px}
+.sec-serv .m-container > img.quote {display: block;transform: scaleX(0.001);}
 .fth-serv .m-container .ansrs .ansr.third-anim-this { transform: scale(1.7);opacity: 0}
 .fth-serv .m-container .ansrs .ansr.third-anim-this:hover p { color: var(--prim-clr)}
 
