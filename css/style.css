@@ -1934,6 +1934,7 @@ a.to-prim {
   font-weight: bold;
   /* height: 80% !important; */
   padding-left: 10px;
+  color: var(--wt-clr) !important;
   /* float: left; */
 }
 .apps .modal-footer {
