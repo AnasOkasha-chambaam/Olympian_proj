@@ -204,7 +204,7 @@
       <ul class="tests">
         <li class="test" id="test-1"><a><img src="img/boxing.png" alt="test-1"></a><p>Boxing Terms Gallery</p></li>
         <li class="test" id="test-2"><a  href="#bfc-app-1" class="modal-trigger"><img src="img/body.png"  style="margin-left: -14px;" alt="test-2"></a><p>Body Fat Calculator</p></li>
-        <li class="test" id="test-3"><a href="#!"><img src="img/idealbody.png" alt="test-3"></a><p>Ideal Body Mass Calculator</p></li>
+        <li class="test" id="test-3"><a href="#bmi-app-2" class="modal-trigger"><img src="img/idealbody.png" alt="test-3"></a><p>Ideal Body Mass Calculator</p></li>
         <li class="test" id="test-4"><a href="#!"><img src="img/freemacro.png" alt="test-4"></a><p>Free Macro Calculator</p></li>
       </ul>
     </div>
@@ -282,6 +282,59 @@
         <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
         <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
         <button class="btn waves-effect waves-dark btn-flat green white-text" type="button" onclick="bfat();">Submit</button>
+      </div>
+    </div>
+    <div id="bmi-app-2" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <div class="fat-percentage">
+          <div class="m-container">
+            <p class="fat-titl">Ideal Body Mass Calculator
+            </p>
+            <form name="fb">
+              <div class="input-field">
+                <select id="msm" onchange="msystembmi()" id="select">
+                  <option value="metric">Metric (Kgs, Cms)</option>
+                  <option value="us">US (lbs, inches)</option>
+                </select>
+                <label for="msf">Measuring System</label>
+              </div>
+              <div class="input-field">
+                <select id="sf">
+                  <option value="m">Male</option>
+                  <option value="f">Female</option>
+                </select>
+                <label for="sf">Gender</label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="bmiage">
+                <label for="bmiage">Age</label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="hm">
+                <label for="hm">Height <span id="thm">(Cms)</span></label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="wm">
+                <label for="wm">Weight <span id="twm"> (Kgs)</span></label>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <div class="input-field">
+          <input placeholder="Body Mass Index (BMI)" id="bmi" class="op white-text" type="text" disabled>
+          <!-- <label for="bf">Your Body Fat</label> -->
+        </div>
+        <div class="input-field">
+          <input placeholder="Normal BMI range"  id="nbmi" value="18.5-25 kg/m2" class="op white-text" type="text" disabled>
+          <!-- <label for="nbf">Body Fat Category</label> -->
+        </div>
+        <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
+        <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
+        <button class="btn waves-effect waves-dark btn-flat green white-text" type="button"
+          onclick="bmass();">Submit</button>
       </div>
     </div>
   </div>
@@ -500,7 +553,96 @@ $(document).ready(function () {
       }
     }
 
-        
+        // the sec app
+
+        function getBMImsg(bmi) {
+      var bmiTable = [{
+          bmi: 10,
+          msg: "You are underweight"
+        },
+        {
+          bmi: 15,
+          msg: "You are underweight"
+        },
+        {
+          bmi: 18.5,
+          msg: "You are underweight"
+        },
+        {
+          bmi: 25,
+          msg: "You are healthy!"
+        },
+        {
+          bmi: 30,
+          msg: "You are overweight"
+        },
+        {
+          bmi: 40,
+          msg: "You are obese!"
+        },
+        {
+          bmi: 50,
+          msg: "You are obese!"
+        }
+      ];
+      var i;
+      var text = bmiTable[0].msg;
+      for (i = 0; i < bmiTable.length; i++) {
+        if (bmi < bmiTable[i].bmi) {
+          text = bmiTable[i].msg;
+          break;
+        }
+      }
+      return text;
+    }
+
+    function msystembmi() {
+      // if ($('#msw')[0].value == 'metric') {
+      //   $('#thw')[0].innerHTML = ' (Cms)';
+      // } else {
+      //   $('#thw')[0].innerHTML = ' (inches)';
+      // };
+      if ($('#msm')[0].value == 'metric') {
+        $('#thm')[0].innerHTML = ' (Cms)';
+        $('#twm')[0].innerHTML = ' (Kgs)';
+      } else {
+        $('#thm')[0].innerHTML = ' (inches)';
+        $('#twm')[0].innerHTML = ' (lbs)';
+      };
+      // if ($('#msf')[0].value == 'metric') {
+      //   $('#thf')[0].innerHTML = ' (Cms)';
+      //   $('#tneck')[0].innerHTML = ' (Cms)';
+      //   $('#twaist')[0].innerHTML = ' (Cms)';
+      //   $('#thips')[0].innerHTML = ' (Cms)';
+      // } else {
+      //   $('#thf')[0].innerHTML = ' (inches)';
+      //   $('#tneck')[0].innerHTML = ' (inches)';
+      //   $('#twaist')[0].innerHTML = ' (inches)';
+      //   $('#thips')[0].innerHTML = ' (inches)';
+      // }
+    }
+
+    function bmass() {
+      let myBmi;
+      var ms = $('#msm')[0].value;
+      var height = $('#hm')[0].value;
+      var weight = $('#wm')[0].value;
+      if (height == null || height.length == 0 || weight == null || weight.length == 0) {
+        $('#bmi')[0].value = "Please enter data.";
+      } else {
+        $('#bmi')[0].value = "";
+      }
+      if (ms == 'metric' && height > 0) {
+        myBmi = (Math.round(weight / (height * height / 10000) * 100) / 100);
+        $('#bmi')[0].value = myBmi + " kg/m2 ";
+        $('#nbmi')[0].value = getBMImsg(myBmi)
+        // Math.round(weight / (height * height / 10000) * 100) / 100 + " kg/m2 "
+      } else if (ms == 'us' && height > 0) {
+        myBmi = (Math.round(703 * weight / (height * height) * 100) / 100);
+        $('#bmi')[0].value = myBmi + " kg/m2 ";
+        $('#nbmi')[0].value = getBMImsg(myBmi)
+      }
+    }
       </script>
 </body>
 </html>
