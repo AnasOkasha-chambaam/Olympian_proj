@@ -205,7 +205,7 @@
         <li class="test" id="test-1"><a><img src="img/boxing.png" alt="test-1"></a><p>Boxing Terms Gallery</p></li>
         <li class="test" id="test-2"><a  href="#bfc-app-1" class="modal-trigger"><img src="img/body.png"  style="margin-left: -14px;" alt="test-2"></a><p>Body Fat Calculator</p></li>
         <li class="test" id="test-3"><a href="#bmi-app-2" class="modal-trigger"><img src="img/idealbody.png" alt="test-3"></a><p>Ideal Body Mass Calculator</p></li>
-        <li class="test" id="test-4"><a href="#!"><img src="img/freemacro.png" alt="test-4"></a><p>Free Macro Calculator</p></li>
+        <li class="test" id="test-4"><a href="#bmi-app-3" class="modal-trigger"><img src="img/freemacro.png" alt="test-4"></a><p>Free Macro Calculator</p></li>
       </ul>
     </div>
   </section>
@@ -226,6 +226,34 @@
             <p class="fat-titl">Fat Percentage Calculator
               </p>
               <form name="fb">
+                <div class="input-field">
+                  <select id="fstmsm" onchange="fstmsystembmi()" id="select">
+                    <option value="metric">Metric (Kgs, Cms)</option>
+                    <option value="us">US (lbs, inches)</option>
+                  </select>
+                  <label for="msf">Measuring System</label>
+                </div>
+                <div class="input-field">
+                  <select id="fstsf">
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+                  </select>
+                  <label for="fstsf">Gender</label>
+                </div>
+                <div class="input-field">
+                  <input type="number" id="fstbmiage">
+                  <label for="fstbmiage">Age</label>
+                </div>
+                <div class="input-field">
+                  <input type="number" id="fsthm">
+                  <label for="fsthm">Height <span id="fstthm">(Cms)</span></label>
+                </div>
+                <div class="input-field">
+                  <input type="number" id="fstwm">
+                  <label for="fstwm">Weight <span id="fsttwm"> (Kgs)</span></label>
+                </div>
+              </form>
+              <!-- <form name="fb">
                 <div class="input-field">
                   <select id="msf" onchange="msystem()" id="select">
                     <option value="metric">Metric (Kgs, Cms)</option>
@@ -264,8 +292,8 @@
                 <div class="input-field">
                   <input placeholder="Body Fat Category" id="nbf" class="op" type="text" disabled>
                   <!-- <label for="nbf">Body Fat Category</label> --
-                </div> -->
-              </form>
+                </div> --
+              </form> -->
           </div>
         </div>
       
@@ -276,12 +304,12 @@
           <!-- <label for="bf">Your Body Fat</label> -->
         </div>
         <div class="input-field">
-          <input placeholder="Body Fat Category" id="nbf" class="op white-text" type="text" disabled>
+          <input placeholder="Body Fat Category" id="fstnbf" class="op white-text" type="text" disabled>
           <!-- <label for="nbf">Body Fat Category</label> -->
         </div>
         <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
         <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
-        <button class="btn waves-effect waves-dark btn-flat green white-text" type="button" onclick="bfat();">Submit</button>
+        <button class="btn waves-effect waves-dark btn-flat green white-text" type="button" onclick="mybfat();">Submit</button>
       </div>
     </div>
     <div id="bmi-app-2" class="modal modal-fixed-footer">
@@ -334,7 +362,15 @@
         <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
         <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
         <button class="btn waves-effect waves-dark btn-flat green white-text" type="button"
-          onclick="bmass();">Submit</button>
+          onclick="bmass('#msm', `#hm`, `#wm`, `#bmiage`, '#bmi');">Submit</button>
+      </div>
+    </div>
+    <div id="bmi-app-3" class="modal modal-fixed-footer">
+      <div class="modal-content" id="scroll-dlt">
+         <!-- Calculators.tech Widget --><div id="ppsWidgetCode" class="third-app-div" data-calculator-slug="macro-calculator" data-calculator-keyword="Macro Calculator" data-config='{"desing":[{"name":"Main Body Background Color","value":"#1c1c22"},{"name":"Form Background","value":"#1c1c22"},{"name":"Input Label","value":"#ced4da"},{"name":"Input border","value":"#ced4da"},{"name":"input background","value":"#1c1c22"},{"name":"Input text","value":"#ced4da"},{"name":"background","value":"#007bff"},{"name":"border color","value":"#007bff"},{"name":"Button Text","value":"#ffffff"}],"text":[]}'></div><div style="text-align: center; font-size:12px; color:#333;"><p>Macro Calculator provided by <a href="https://www.calculators.tech/macro-calculator" rel="nofollow" target="_blank"  style="color:#000;" id="ppsLink">Macro Calculator</a></p></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text" style="color: white;"><span> Close</span></a>
       </div>
     </div>
   </div>
@@ -342,6 +378,7 @@
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="https://www.calculators.tech/assets/lib/js/calculator-widget.js"></script>
       <script src="js/app.js"></script>
       <script>
         
@@ -552,9 +589,78 @@ $(document).ready(function () {
         // $('#nbf')[0].value = bfc;
       }
     }
+    let fstBmi = 0 ;
+    function mybfat() {
+      let fstfatperc = 0;
+      let fstage = $('#fstbmiage')[0].value;
+      
+      bmass('#fstmsm', `#fsthm`, `#fstwm`, `#fstbmiage`, '#bf');
+      if (fstBmi != 0) {
+      fstfatperc = ((1.2*fstBmi) + (0.23*($('#fstbmiage')[0].value)) - 16.2)
+      if ($('#fstsf')[0].value == 'm'){
+        // console.log
+      $('#bf')[0].value = fstfatperc.toFixed(2) + ' %'
+        switch (true) {
+          case (fstage > 0 && fstage < 40): 
+            switch(true) {
+              case (fstfatperc < 8):  $('#fstnbf')[0].value = ' Underfat'; break;
+              case (fstfatperc >= 8 && fstfatperc < 19):  $('#fstnbf')[0].value = ' Healthy'; break;
+              case (fstfatperc >= 19 && fstfatperc < 25):  $('#fstnbf')[0].value = ' Overweight'; break;
+              case (fstfatperc >= 25):  $('#fstnbf')[0].value = ' Obese'; break;
+            };
+          break;
+          case (fstage >= 40 && fstage < 60): 
+            switch(true) {
+              case (fstfatperc < 11):  $('#fstnbf')[0].value = ' Underfat'; break;
+              case (fstfatperc >= 11 && fstfatperc < 22):  $('#fstnbf')[0].value = ' Healthy'; break;
+              case (fstfatperc >= 22 && fstfatperc < 27):  $('#fstnbf')[0].value = ' Overweight'; break;
+              case (fstfatperc >= 27):  $('#fstnbf')[0].value = ' Obese'; break;
+            };
+          break;
+          case (fstage >= 60): 
+            switch(true) {
+              case (fstfatperc < 13):  $('#fstnbf')[0].value = ' Underfat'; break;
+              case (fstfatperc >= 13 && fstfatperc < 25):  $('#fstnbf')[0].value = ' Healthy'; break;
+              case (fstfatperc >= 25 && fstfatperc < 30):  $('#fstnbf')[0].value = ' Overweight'; break;
+              case (fstfatperc >= 30):  $('#fstnbf')[0].value = ' Obese'; break;
+            };
+          break;
+        }
 
+      } else if ($('#fstsf')[0].value == 'f') {        
+        $('#bf')[0].value = (fstfatperc + 10.8).toFixed(2) + ' %';
+        switch (true) {
+          case (fstage > 0 && fstage < 40): 
+            switch(true) {
+              case ((fstfatperc + 10.8) < 21):  $('#fstnbf')[0].value = ' Underfat'; break;
+              case ((fstfatperc + 10.8) >= 21 && (fstfatperc + 10.8) < 33):  $('#fstnbf')[0].value = ' Healthy'; break;
+              case ((fstfatperc + 10.8) >= 33 && (fstfatperc + 10.8) < 39):  $('#fstnbf')[0].value = ' Overweight'; break;
+              case ((fstfatperc + 10.8) >= 39):  $('#fstnbf')[0].value = ' Obese'; break;
+            };
+          break;
+          case (fstage >= 40 && fstage < 60): 
+            switch(true) {
+              case ((fstfatperc + 10.8) < 23):  $('#fstnbf')[0].value = ' Underfat'; break;
+              case ((fstfatperc + 10.8) >= 23 && (fstfatperc + 10.8) < 35):  $('#fstnbf')[0].value = ' Healthy'; break;
+              case ((fstfatperc + 10.8) >= 35 && (fstfatperc + 10.8) < 40):  $('#fstnbf')[0].value = ' Overweight'; break;
+              case ((fstfatperc + 10.8) >= 40):  $('#fstnbf')[0].value = ' Obese'; break;
+            };
+          break;
+          case (fstage >= 60): 
+            switch(true) {
+              case ((fstfatperc + 10.8) < 24):  $('#fstnbf')[0].value = ' Underfat'; break;
+              case ((fstfatperc + 10.8) >= 24 && (fstfatperc + 10.8) < 36):  $('#fstnbf')[0].value = ' Healthy'; break;
+              case ((fstfatperc + 10.8) >= 36 && (fstfatperc + 10.8) < 42):  $('#fstnbf')[0].value = ' Overweight'; break;
+              case ((fstfatperc + 10.8) >= 42):  $('#fstnbf')[0].value = ' Obese'; break;
+            };
+          break;
+        }
+
+      }
+      }
+    }
         // the sec app
-
+      
         function getBMImsg(bmi) {
       var bmiTable = [{
           bmi: 10,
@@ -596,6 +702,31 @@ $(document).ready(function () {
       return text;
     }
 
+    function fstmsystembmi() {
+      // if ($('#msw')[0].value == 'metric') {
+      //   $('#thw')[0].innerHTML = ' (Cms)';
+      // } else {
+      //   $('#thw')[0].innerHTML = ' (inches)';
+      // };
+      if ($('#fstmsm')[0].value == 'metric') {
+        $('#fstthm')[0].innerHTML = ' (Cms)';
+        $('#fsttwm')[0].innerHTML = ' (Kgs)';
+      } else {
+        $('#fstthm')[0].innerHTML = ' (inches)';
+        $('#fsttwm')[0].innerHTML = ' (lbs)';
+      };
+      // if ($('#msf')[0].value == 'metric') {
+      //   $('#thf')[0].innerHTML = ' (Cms)';
+      //   $('#tneck')[0].innerHTML = ' (Cms)';
+      //   $('#twaist')[0].innerHTML = ' (Cms)';
+      //   $('#thips')[0].innerHTML = ' (Cms)';
+      // } else {
+      //   $('#thf')[0].innerHTML = ' (inches)';
+      //   $('#tneck')[0].innerHTML = ' (inches)';
+      //   $('#twaist')[0].innerHTML = ' (inches)';
+      //   $('#thips')[0].innerHTML = ' (inches)';
+      // }
+    }
     function msystembmi() {
       // if ($('#msw')[0].value == 'metric') {
       //   $('#thw')[0].innerHTML = ' (Cms)';
@@ -622,27 +753,37 @@ $(document).ready(function () {
       // }
     }
 
-    function bmass() {
-      let myBmi;
-      var ms = $('#msm')[0].value;
-      var height = $('#hm')[0].value;
-      var weight = $('#wm')[0].value;
-      if (height == null || height.length == 0 || weight == null || weight.length == 0) {
-        $('#bmi')[0].value = "Please enter data.";
+    function bmass(one, two, three, four, five) {
+      let myBmi = 0;
+      var ms = $(one)[0].value;
+      var height = $(two)[0].value;
+      var weight = $(three)[0].value;
+      let bmiage = $(four)[0].value;
+      if (height == null || height.length == 0 || weight == null || weight.length == 0 || bmiage == null || bmiage.length == 0 || bmiage == null || bmiage == 0) {
+        $(five)[0].classList.add('red');
+        $(five)[0].classList.add('white-text');
+        $(five)[0].value = "Pleas insert numbers.";
       } else {
-        $('#bmi')[0].value = "";
+        $(five)[0].classList.remove('red');
+        $(five)[0].classList.remove('white-text');
+        $(five)[0].value = "";
       }
-      if (ms == 'metric' && height > 0) {
+      if (ms == 'metric' && height > 0 && bmiage > 0) {
         myBmi = (Math.round(weight / (height * height / 10000) * 100) / 100);
         $('#bmi')[0].value = myBmi + " kg/m2 ";
         $('#nbmi')[0].value = getBMImsg(myBmi)
         // Math.round(weight / (height * height / 10000) * 100) / 100 + " kg/m2 "
-      } else if (ms == 'us' && height > 0) {
+      } else if (ms == 'us' && height > 0 && bmiage > 0) {
         myBmi = (Math.round(703 * weight / (height * height) * 100) / 100);
         $('#bmi')[0].value = myBmi + " kg/m2 ";
         $('#nbmi')[0].value = getBMImsg(myBmi)
+      } else {
+        $('#bmi')[0].value = "Please enter data.";
       }
+      fstBmi = myBmi;
     }
+
       </script>
+      
 </body>
 </html>

@@ -12,7 +12,7 @@
   --sec-font: Comic Sans MS;
   --brdr-size: 10px;
   --shadow-clr: #dbb76e83;
-  --blue-drk-clr: #1b1b21;
+  --blue-drk-clr: rgb(28, 28, 34);
 }
 h1{
   margin: 0;
