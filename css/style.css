@@ -1993,3 +1993,7 @@ form[name="macro-calc"] {
   background-color: var(--blue-drk-clr);
 
 }
+
+.modal-footer .input-field input {
+  text-align: center !important;
+}
