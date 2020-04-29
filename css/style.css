@@ -1943,3 +1943,53 @@ a.to-prim {
   background-color: var(--sec-clr);
   padding: 10px
 }
+
+/* third app */
+form[name="macro-calc"] {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(317px, 1fr));
+  margin: 40px auto;
+  font-family: var(--sec-font);
+}
+.radio-div .titl {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+.radio-elem {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  justify-content: center;
+  margin: auto;
+  text-align: center;
+  background: #333;
+  padding: 10px;
+}
+#third-app-msg {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+}
+.third-app-results {
+   font-family: var(--sec-font);
+}
+.third-app-results > p{
+  text-align: center;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.final-macros {
+  margin-bottom: 50px;
+}
+.final-macros div p {
+  padding: 10px;
+  font-size: 17px;
+}
+.final-macros div p.tit {
+  width: 170px;
+  margin: auto;
+  background-color: var(--blue-drk-clr);
+
+}

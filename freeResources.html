@@ -344,7 +344,7 @@ fetchDat('dietvid', '.sec-sect #ltr')
       <div class="modal-content">
         <div class="fat-percentage">
           <div class="m-container">
-            <p class="fat-titl">Ideal Body Mass Calculator
+            <p class="fat-titl">Macro Calculator
             </p>
             <form name="fb">
               <div class="input-field">
@@ -390,15 +390,114 @@ fetchDat('dietvid', '.sec-sect #ltr')
         <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
         <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
         <button class="btn waves-effect waves-dark btn-flat green white-text" type="button"
-          onclick="bmass('#msm', `#hm`, `#wm`, `#bmiage`, '#bmi');">Submit</button>
+          onclick="bmass('#msm', `#hm`, `#wm`, `#bmiage`, '#bmi', '#nbmi');">Submit</button>
       </div>
     </div>
     <div id="bmi-app-3" class="modal modal-fixed-footer">
       <div class="modal-content" id="scroll-dlt">
-         <!-- Calculators.tech Widget --><div id="ppsWidgetCode" class="third-app-div" data-calculator-slug="macro-calculator" data-calculator-keyword="Macro Calculator" data-config='{"desing":[{"name":"Main Body Background Color","value":"#1c1c22"},{"name":"Form Background","value":"#1c1c22"},{"name":"Input Label","value":"#ced4da"},{"name":"Input border","value":"#ced4da"},{"name":"input background","value":"#1c1c22"},{"name":"Input text","value":"#ced4da"},{"name":"background","value":"#007bff"},{"name":"border color","value":"#007bff"},{"name":"Button Text","value":"#ffffff"}],"text":[]}'></div><div style="text-align: center; font-size:12px; color:#333;"><p>Macro Calculator provided by <a href="https://www.calculators.tech/macro-calculator" rel="nofollow" target="_blank"  style="color:#000;" id="ppsLink">Macro Calculator</a></p></div>
+        <div class="macro-calc-app">
+          <div class="m-container">
+            <p class="fat-titl">Macro Calculator
+            </p>
+            <form name="macro-calc">
+              <div class="input-field">
+                <select id="msm-macc" onchange="msystemmacc()" id="select">
+                  <option value="metric" selected>Metric (Kgs, Cms)</option>
+                  <option value="us">US (lbs, inches)</option>
+                </select>
+                <label for="msm-macc">Measuring System</label>
+              </div>
+              <div class="input-field">
+                <select id="sf-macc" onchange="changeREEEq()">
+                  <option value="m" selected>Male</option>
+                  <option value="f">Female</option>
+                </select>
+                <label for="sf-macc">Gender</label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="age-macc">
+                <label for="age-macc">Age</label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="hm-macc">
+                <label for="hm-macc">Height <span id="thm-macc">(Cms)</span></label>
+              </div>
+              <div class="input-field">
+                <input type="number" id="wm-macc">
+                <label for="wm-macc">Weight <span id="twm-macc"> (Kgs)</span></label>
+              </div>
+              <div class="input-field">
+                <select id="activity-level" onchange="TDEEChangeF()">
+                  <option value="1.2">Sedentary</option>
+                  <option value="1.375">Light</option>
+                  <option value="1.55">Moderate</option>
+                  <option value="1.725">Very Active</option>
+                </select>
+                <label for="activity-level">Activity Level</label>
+              </div>
+              <div class="goals-div radio-div">
+                <p class="titl">YOUR GOAL</p>
+                <div class="radio-elem">
+                  <p>
+                    <input class="with-gap" type="radio" name="goals" value="0.8" id="g-lose">
+                    <label for="g-lose">Lose</label>
+                  </p>
+                  <p>
+                    <input class="with-gap" type="radio" name="goals" id="g-mentain" value="1" checked>
+                    <label for="g-mentain">Mentain</label>
+                  </p>
+                  <p>
+                    <input type="radio" name="goals" value="1.2" id="g-gain">
+                    <label for="g-gain">Gain</label>
+                  </p>
+                </div>
+              </div>
+              <div class="protein-div radio-div">
+                <p class="titl">ADJUST PROTEIN</p>
+                <div class="radio-elem">
+                  <p>
+                    <input class="with-gap" type="radio" name="prot" id="p-mod" value="0.65">
+                    <label for="p-mod">Moderate</label>
+                  </p>
+                  <p>
+                    <input class="with-gap" type="radio" name="prot" id="p-high" value="0.82">
+                    <label for="p-high">Hight</label>
+                  </p>
+                  <p>
+                    <input type="radio" name="prot" id="p-max" value="1" checked>
+                    <label for="p-max">Maximum</label>
+                  </p>
+                </div>
+              </div>
+            </form>
+            <div id="loader"></div>
+            <div class="third-app-results">
+              <p><span id="total-cal">0</span> CALORIES PER DAY</p>
+              <div class="radio-elem final-macros">
+                <div class="carbo-div">
+                  <p class="tit">Carbohydrate</p>
+                  <p><span id="final-carbo">0</span> g</p>
+                  <p><span id="carbo-percent">0</span> %</p>
+                </div>
+                <div class="prot-div">
+                  <p class="tit">Protein</p>
+                  <p><span id="final-prot">0</span> g</p>
+                  <p><span id="prot-percent">0</span> %</p>
+                </div>
+                <div class="fat-div">
+                  <p class="tit">Fat</p>
+                  <p><span id="final-fat">0</span> g</p>
+                  <p><span id="fat-percent">0</span> %</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"> <span> Close</span></a>
+        <p id="third-app-msg"></p>
+        <button class="btn green white-text" id="calculate-macc">Calculate</button>
+        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text" style="color: white;"><span> Close</span></a>
       </div>
     </div>
   </div>
@@ -408,456 +507,8 @@ fetchDat('dietvid', '.sec-sect #ltr')
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script src="js/lightslider.js"></script>
   <script src="js/vidssapp.js"></script>
-  <script type="text/javascript" src="https://www.calculators.tech/assets/lib/js/calculator-widget.js"></script>
   <script src="js/app.js"></script>
-  <script>
-    $(document).ready((e) => {
-      $('.carousel').carousel();
-      $('.modal').modal();
-      $('select').material_select();
-    })
-
-    // the app
-     
-    function msystem() {
-      if ($('#msf')[0].value == 'metric') {
-        $('#thf')[0].innerHTML = ' (Cms)';
-        $('#tneck')[0].innerHTML = ' (Cms)';
-        $('#twaist')[0].innerHTML = ' (Cms)';
-        $('#thips')[0].innerHTML = ' (Cms)';
-      } else {
-        $('#thf')[0].innerHTML = ' (inches)';
-        $('#tneck')[0].innerHTML = ' (inches)';
-        $('#twaist')[0].innerHTML = ' (inches)';
-        $('#thips')[0].innerHTML = ' (inches)';
-      }
-    ;
-      // console.log('hey');
-      $('select').material_select();
-    }
-    // console.log( $('#thf')[0])
-    function bfat() {
-      var ms = $('#msf')[0].value;
-      var sex = $('#sf')[0].value;
-      var height = $('#hf')[0].value;
-      var neck = $('#neck')[0].value;
-      var waist = $('#waist')[0].value;
-      var hips = $('#hips')[0].value;
-      var ibf;
-      var bfc;
-      if (height == null || height == 0 || neck == null || neck == 0 || waist == null || waist == 0) {
-        $('#bf')[0].classList.add('red');
-        $('#bf')[0].classList.add('white-text');
-        $('#bf')[0].value = "Pleas insert numbers.";
-      } else {
-        $('#bf')[0].classList.remove('red');
-        $('#bf')[0].classList.remove('white-text');
-        $('#bf')[0].value = "";
-      }
-      if (ms == 'metric' && sex == 'm' && height > 0 && waist > 0 && neck > 0) {
-        ibf = Math.round((86.010 * (Math.log(waist * 1 - neck * 1) / Math.log(10)) - 70.041 * (Math.log(height) / Math
-          .log(10)) + 30.30 * 1) * 100) / 100;
-        if (ibf <= 5) {
-          bfc = 'Essential';
-        } else if (ibf > 5 && ibf <= 17) {
-          bfc = 'Fit';
-        } else if (ibf > 17 && ibf <= 25) {
-          bfc = 'Acceptable';
-        } else if (ibf > 25) {
-          bfc = 'Obese';
-        }
-        switch (isNaN(ibf)) {
-          case true:
-        $('#bf')[0].classList.add('red');
-        $('#bf')[0].classList.add('white-text');
-        $('#bf')[0].value = `Numbers are not right`;
-            break;
-        
-          default:
-        $('#bf')[0].classList.remove('red');
-        $('#bf')[0].classList.remove('white-text');
-        $('#bf')[0].value = ibf + " % ";
-        $('#nbf')[0].value = bfc;
-        console.log('hey');
-            break;
-        }
-
-        // $('#bf')[0].value = ibf + " % ";
-        // $('#nbf')[0].value = bfc;
-      } else if (ms == 'us' && sex == 'm' && height > 0 && waist > 0 && neck > 0) {
-        ibf = Math.round((86.010 * (Math.log(waist * 1 - neck * 1) / Math.log(10)) - 70.041 * (Math.log(height) / Math
-          .log(10)) + 36.76 * 1) * 100) / 100;
-        if (ibf <= 5) {
-          bfc = 'Essential';
-        } else if (ibf > 5 && ibf <= 17) {
-          bfc = 'Fit';
-        } else if (ibf > 17 && ibf <= 25) {
-          bfc = 'Acceptable';
-        } else if (ibf > 25) {
-          bfc = 'Obese';
-        }
-        switch (isNaN(ibf)) {
-          case true:
-        $('#bf')[0].classList.add('red');
-        $('#bf')[0].classList.add('white-text');
-        $('#bf')[0].value = `Numbers are not right`;
-            break;
-        
-          default:
-        $('#bf')[0].classList.remove('red');
-        $('#bf')[0].classList.remove('white-text');
-        $('#bf')[0].value = ibf + " % ";
-        $('#nbf')[0].value = bfc;
-        console.log('hey');
-            break;
-        }
-        // $('#bf')[0].value = ibf + " % ";
-        // $('#nbf')[0].value = bfc;
-      } else if (ms == 'metric' && sex == 'f' && height > 0 && waist > 0 && neck > 0) {
-        ibf = Math.round((163.205 * (Math.log(waist * 1 + hips * 1 - neck * 1) / Math.log(10)) - 97.684 * (Math.log(
-          height) / Math.log(10)) - 104.912 * 1) * 100) / 100;
-        if (ibf <= 15) {
-          bfc = 'Essential';
-        } else if (ibf > 15 && ibf <= 24) {
-          bfc = 'Fit';
-        } else if (ibf > 24 && ibf <= 31) {
-          bfc = 'Acceptable';
-        } else if (ibf > 31) {
-          bfc = 'Obese';
-        }
-        switch (isNaN(ibf)) {
-          case true:
-        $('#bf')[0].classList.add('red');
-        $('#bf')[0].classList.add('white-text');
-        $('#bf')[0].value = `Numbers are not right`;
-            break;
-        
-          default:
-        $('#bf')[0].classList.remove('red');
-        $('#bf')[0].classList.remove('white-text');
-        $('#bf')[0].value = ibf + " % ";
-        $('#nbf')[0].value = bfc;
-        console.log('hey');
-            break;
-        }
-
-        // $('#bf')[0].value = ibf + " % ";
-        // $('#nbf')[0].value = bfc;
-      } else if (ms == 'us' && sex == 'f' && height > 0 && waist > 0 && neck > 0) {
-        ibf = Math.round((163.205 * (Math.log(waist * 1 + hips * 1 - neck * 1) / Math.log(10)) - 97.684 * (Math.log(
-          height) / Math.log(10)) - 78.387 * 1) * 100) / 100;
-        if (ibf <= 15) {
-          bfc = 'Essential';
-        } else if (ibf > 15 && ibf <= 24) {
-          bfc = 'Fit';
-        } else if (ibf > 24 && ibf <= 31) {
-          bfc = 'Acceptable';
-        } else if (ibf > 31) {
-          bfc = 'Obese';
-        }
-        switch (isNaN(ibf)) {
-          case true:
-        $('#bf')[0].classList.add('red');
-        $('#bf')[0].classList.add('white-text');
-        $('#bf')[0].value = `Numbers are not right`;
-            break;
-        
-          default:
-        $('#bf')[0].classList.remove('red');
-        $('#bf')[0].classList.remove('white-text');
-        $('#bf')[0].value = ibf + " % ";
-        $('#nbf')[0].value = bfc;
-        console.log('hey');
-            break;
-        }
-        // $('#bf')[0].value = ibf + " % ";
-        // $('#nbf')[0].value = bfc;
-      }
-    }
-    let fstBmi = 0 ;
-    function mybfat() {
-      let fstfatperc = 0;
-      let fstage = $('#fstbmiage')[0].value;
-      
-      console.log(fstnbf);
-      bmass('#fstmsm', `#fsthm`, `#fstwm`, `#fstbmiage`, '#bf');
-      if (fstBmi != 0) {
-      fstfatperc = ((1.2*fstBmi) + (0.23*($('#fstbmiage')[0].value)) - 16.2)
-      if ($('#fstsf')[0].value == 'm'){
-        // console.log
-      $('#bf')[0].value = fstfatperc.toFixed(2) + ' %'
-        switch (true) {
-          case (fstage > 0 && fstage < 40): 
-            switch(true) {
-              case (fstfatperc < 8):  $('#fstnbf')[0].value = ' Underfat'; break;
-              case (fstfatperc >= 8 && fstfatperc < 19):  $('#fstnbf')[0].value = ' Healthy'; break;
-              case (fstfatperc >= 19 && fstfatperc < 25):  $('#fstnbf')[0].value = ' Overweight'; break;
-              case (fstfatperc >= 25):  $('#fstnbf')[0].value = ' Obese'; break;
-            };
-          break;
-          case (fstage >= 40 && fstage < 60): 
-            switch(true) {
-              case (fstfatperc < 11):  $('#fstnbf')[0].value = ' Underfat'; break;
-              case (fstfatperc >= 11 && fstfatperc < 22):  $('#fstnbf')[0].value = ' Healthy'; break;
-              case (fstfatperc >= 22 && fstfatperc < 27):  $('#fstnbf')[0].value = ' Overweight'; break;
-              case (fstfatperc >= 27):  $('#fstnbf')[0].value = ' Obese'; break;
-            };
-          break;
-          case (fstage >= 60): 
-            switch(true) {
-              case (fstfatperc < 13):  $('#fstnbf')[0].value = ' Underfat'; break;
-              case (fstfatperc >= 13 && fstfatperc < 25):  $('#fstnbf')[0].value = ' Healthy'; break;
-              case (fstfatperc >= 25 && fstfatperc < 30):  $('#fstnbf')[0].value = ' Overweight'; break;
-              case (fstfatperc >= 30):  $('#fstnbf')[0].value = ' Obese'; break;
-            };
-          break;
-        }
-
-      } else if ($('#fstsf')[0].value == 'f') {        
-        $('#bf')[0].value = (fstfatperc + 10.8).toFixed(2) + ' %';
-        switch (true) {
-          case (fstage > 0 && fstage < 40): 
-            switch(true) {
-              case (fstfatperc < 21):  $('#fstnbf')[0].value = ' Underfat'; break;
-              case (fstfatperc >= 21 && fstfatperc < 33):  $('#fstnbf')[0].value = ' Healthy'; break;
-              case (fstfatperc >= 33 && fstfatperc < 39):  $('#fstnbf')[0].value = ' Overweight'; break;
-              case (fstfatperc >= 39):  $('#fstnbf')[0].value = ' Obese'; break;
-            };
-          break;
-          case (fstage >= 40 && fstage < 60): 
-            switch(true) {
-              case (fstfatperc < 23):  $('#fstnbf')[0].value = ' Underfat'; break;
-              case (fstfatperc >= 23 && fstfatperc < 35):  $('#fstnbf')[0].value = ' Healthy'; break;
-              case (fstfatperc >= 35 && fstfatperc < 40):  $('#fstnbf')[0].value = ' Overweight'; break;
-              case (fstfatperc >= 40):  $('#fstnbf')[0].value = ' Obese'; break;
-            };
-          break;
-          case (fstage >= 60): 
-            switch(true) {
-              case (fstfatperc < 24):  $('#fstnbf')[0].value = ' Underfat'; break;
-              case (fstfatperc >= 24 && fstfatperc < 36):  $('#fstnbf')[0].value = ' Healthy'; break;
-              case (fstfatperc >= 36 && fstfatperc < 42):  $('#fstnbf')[0].value = ' Overweight'; break;
-              case (fstfatperc >= 42):  $('#fstnbf')[0].value = ' Obese'; break;
-            };
-          break;
-        }
-
-      }
-      }
-    }
-        // the sec app
-      
-        function getBMImsg(bmi) {
-      var bmiTable = [{
-          bmi: 10,
-          msg: "You are underweight"
-        },
-        {
-          bmi: 15,
-          msg: "You are underweight"
-        },
-        {
-          bmi: 18.5,
-          msg: "You are underweight"
-        },
-        {
-          bmi: 25,
-          msg: "You are healthy!"
-        },
-        {
-          bmi: 30,
-          msg: "You are overweight"
-        },
-        {
-          bmi: 40,
-          msg: "You are obese!"
-        },
-        {
-          bmi: 50,
-          msg: "You are obese!"
-        }
-      ];
-      var i;
-      var text = bmiTable[0].msg;
-      for (i = 0; i < bmiTable.length; i++) {
-        if (bmi < bmiTable[i].bmi) {
-          text = bmiTable[i].msg;
-          break;
-        }
-      }
-      return text;
-    }
-
-    function fstmsystembmi() {
-      // if ($('#msw')[0].value == 'metric') {
-      //   $('#thw')[0].innerHTML = ' (Cms)';
-      // } else {
-      //   $('#thw')[0].innerHTML = ' (inches)';
-      // };
-      if ($('#fstmsm')[0].value == 'metric') {
-        $('#fstthm')[0].innerHTML = ' (Cms)';
-        $('#fsttwm')[0].innerHTML = ' (Kgs)';
-      } else {
-        $('#fstthm')[0].innerHTML = ' (inches)';
-        $('#fsttwm')[0].innerHTML = ' (lbs)';
-      };
-      // if ($('#msf')[0].value == 'metric') {
-      //   $('#thf')[0].innerHTML = ' (Cms)';
-      //   $('#tneck')[0].innerHTML = ' (Cms)';
-      //   $('#twaist')[0].innerHTML = ' (Cms)';
-      //   $('#thips')[0].innerHTML = ' (Cms)';
-      // } else {
-      //   $('#thf')[0].innerHTML = ' (inches)';
-      //   $('#tneck')[0].innerHTML = ' (inches)';
-      //   $('#twaist')[0].innerHTML = ' (inches)';
-      //   $('#thips')[0].innerHTML = ' (inches)';
-      // }
-    }
-    function msystembmi() {
-      // if ($('#msw')[0].value == 'metric') {
-      //   $('#thw')[0].innerHTML = ' (Cms)';
-      // } else {
-      //   $('#thw')[0].innerHTML = ' (inches)';
-      // };
-      if ($('#msm')[0].value == 'metric') {
-        $('#thm')[0].innerHTML = ' (Cms)';
-        $('#twm')[0].innerHTML = ' (Kgs)';
-      } else {
-        $('#thm')[0].innerHTML = ' (inches)';
-        $('#twm')[0].innerHTML = ' (lbs)';
-      };
-      // if ($('#msf')[0].value == 'metric') {
-      //   $('#thf')[0].innerHTML = ' (Cms)';
-      //   $('#tneck')[0].innerHTML = ' (Cms)';
-      //   $('#twaist')[0].innerHTML = ' (Cms)';
-      //   $('#thips')[0].innerHTML = ' (Cms)';
-      // } else {
-      //   $('#thf')[0].innerHTML = ' (inches)';
-      //   $('#tneck')[0].innerHTML = ' (inches)';
-      //   $('#twaist')[0].innerHTML = ' (inches)';
-      //   $('#thips')[0].innerHTML = ' (inches)';
-      // }
-    }
-
-    function bmass(one, two, three, four, five) {
-      let myBmi = 0;
-      var ms = $(one)[0].value;
-      var height = $(two)[0].value;
-      var weight = $(three)[0].value;
-      let bmiage = $(four)[0].value;
-      if (height == null || height.length == 0 || weight == null || weight.length == 0 || bmiage == null || bmiage.length == 0 || bmiage == null || bmiage == 0) {
-        $(five)[0].classList.add('red');
-        $(five)[0].classList.add('white-text');
-        $(five)[0].value = "Pleas insert numbers.";
-      } else {
-        $(five)[0].classList.remove('red');
-        $(five)[0].classList.remove('white-text');
-        $(five)[0].value = "";
-      }
-      if (ms == 'metric' && height > 0 && bmiage > 0) {
-        myBmi = (Math.round(weight / (height * height / 10000) * 100) / 100);
-        $('#bmi')[0].value = myBmi + " kg/m2 ";
-        $('#nbmi')[0].value = getBMImsg(myBmi)
-        // Math.round(weight / (height * height / 10000) * 100) / 100 + " kg/m2 "
-      } else if (ms == 'us' && height > 0 && bmiage > 0) {
-        myBmi = (Math.round(703 * weight / (height * height) * 100) / 100);
-        $('#bmi')[0].value = myBmi + " kg/m2 ";
-        $('#nbmi')[0].value = getBMImsg(myBmi)
-      } else {
-        $('#bmi')[0].value = "Please enter data.";
-      }
-      fstBmi = myBmi;
-    }
-
-    function getBMImsg(bmi) {
-      var bmiTable = [{
-          bmi: 10,
-          msg: "You are underweight"
-        },
-        {
-          bmi: 15,
-          msg: "You are underweight"
-        },
-        {
-          bmi: 18.5,
-          msg: "You are underweight"
-        },
-        {
-          bmi: 25,
-          msg: "You are healthy!"
-        },
-        {
-          bmi: 30,
-          msg: "You are overweight"
-        },
-        {
-          bmi: 40,
-          msg: "You are obese!"
-        },
-        {
-          bmi: 50,
-          msg: "You are obese!"
-        }
-      ];
-      var i;
-      var text = bmiTable[0].msg;
-      for (i = 0; i < bmiTable.length; i++) {
-        if (bmi < bmiTable[i].bmi) {
-          text = bmiTable[i].msg;
-          break;
-        }
-      }
-      return text;
-    }
-
-    function msystembmi() {
-      // if ($('#msw')[0].value == 'metric') {
-      //   $('#thw')[0].innerHTML = ' (Cms)';
-      // } else {
-      //   $('#thw')[0].innerHTML = ' (inches)';
-      // };
-      if ($('#msm')[0].value == 'metric') {
-        $('#thm')[0].innerHTML = ' (Cms)';
-        $('#twm')[0].innerHTML = ' (Kgs)';
-      } else {
-        $('#thm')[0].innerHTML = ' (inches)';
-        $('#twm')[0].innerHTML = ' (lbs)';
-      };
-      // if ($('#msf')[0].value == 'metric') {
-      //   $('#thf')[0].innerHTML = ' (Cms)';
-      //   $('#tneck')[0].innerHTML = ' (Cms)';
-      //   $('#twaist')[0].innerHTML = ' (Cms)';
-      //   $('#thips')[0].innerHTML = ' (Cms)';
-      // } else {
-      //   $('#thf')[0].innerHTML = ' (inches)';
-      //   $('#tneck')[0].innerHTML = ' (inches)';
-      //   $('#twaist')[0].innerHTML = ' (inches)';
-      //   $('#thips')[0].innerHTML = ' (inches)';
-      // }
-    }
-
-    function bmass() {
-      let myBmi;
-      var ms = $('#msm')[0].value;
-      var height = $('#hm')[0].value;
-      var weight = $('#wm')[0].value;
-      if (height == null || height.length == 0 || weight == null || weight.length == 0) {
-        $('#bmi')[0].value = "Please enter data.";
-      } else {
-        $('#bmi')[0].value = "";
-      }
-      if (ms == 'metric' && height > 0) {
-        myBmi = (Math.round(weight / (height * height / 10000) * 100) / 100);
-        $('#bmi')[0].value = myBmi + " kg/m2 ";
-        $('#nbmi')[0].value = getBMImsg(myBmi)
-        // Math.round(weight / (height * height / 10000) * 100) / 100 + " kg/m2 "
-      } else if (ms == 'us' && height > 0) {
-        myBmi = (Math.round(703 * weight / (height * height) * 100) / 100);
-        $('#bmi')[0].value = myBmi + " kg/m2 ";
-        $('#nbmi')[0].value = getBMImsg(myBmi)
-      }
-    }
-  </script>
+  <script src="js/allapps.js"></script>
 </body>
 
 </html>
