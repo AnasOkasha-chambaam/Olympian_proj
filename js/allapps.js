@@ -22,10 +22,8 @@ function msystem() {
     $('#thips')[0].innerHTML = ' (inches)';
   }
 ;
-  // console.log('hey');
   $('select').material_select();
 }
-// console.log( $('#thf')[0])
 function bfat() {
   var ms = $('#msf')[0].value;
   var sex = $('#sf')[0].value;
@@ -68,12 +66,10 @@ function bfat() {
     $('#bf')[0].classList.remove('white-text');
     $('#bf')[0].value = ibf + " % ";
     $('#nbf')[0].value = bfc;
-    console.log('hey');
         break;
     }
 
-    // $('#bf')[0].value = ibf + " % ";
-    // $('#nbf')[0].value = bfc;
+
   } else if (ms == 'us' && sex == 'm' && height > 0 && waist > 0 && neck > 0) {
     ibf = Math.round((86.010 * (Math.log(waist * 1 - neck * 1) / Math.log(10)) - 70.041 * (Math.log(height) / Math
       .log(10)) + 36.76 * 1) * 100) / 100;
@@ -98,11 +94,9 @@ function bfat() {
     $('#bf')[0].classList.remove('white-text');
     $('#bf')[0].value = ibf + " % ";
     $('#nbf')[0].value = bfc;
-    console.log('hey');
         break;
     }
-    // $('#bf')[0].value = ibf + " % ";
-    // $('#nbf')[0].value = bfc;
+
   } else if (ms == 'metric' && sex == 'f' && height > 0 && waist > 0 && neck > 0) {
     ibf = Math.round((163.205 * (Math.log(waist * 1 + hips * 1 - neck * 1) / Math.log(10)) - 97.684 * (Math.log(
       height) / Math.log(10)) - 104.912 * 1) * 100) / 100;
@@ -127,12 +121,10 @@ function bfat() {
     $('#bf')[0].classList.remove('white-text');
     $('#bf')[0].value = ibf + " % ";
     $('#nbf')[0].value = bfc;
-    console.log('hey');
         break;
     }
 
-    // $('#bf')[0].value = ibf + " % ";
-    // $('#nbf')[0].value = bfc;
+
   } else if (ms == 'us' && sex == 'f' && height > 0 && waist > 0 && neck > 0) {
     ibf = Math.round((163.205 * (Math.log(waist * 1 + hips * 1 - neck * 1) / Math.log(10)) - 97.684 * (Math.log(
       height) / Math.log(10)) - 78.387 * 1) * 100) / 100;
@@ -157,11 +149,9 @@ function bfat() {
     $('#bf')[0].classList.remove('white-text');
     $('#bf')[0].value = ibf + " % ";
     $('#nbf')[0].value = bfc;
-    console.log('hey');
         break;
     }
-    // $('#bf')[0].value = ibf + " % ";
-    // $('#nbf')[0].value = bfc;
+
   }
 }
 let fstBmi = 0 ;
@@ -173,7 +163,6 @@ function mybfat() {
   if (fstBmi != 0) {
   fstfatperc = ((1.2*fstBmi) + (0.23*($('#fstbmiage')[0].value)) - 16.2)
   if ($('#fstsf')[0].value == 'm'){
-    // console.log
   $('#bf')[0].value = fstfatperc.toFixed(2) + ' %'
     switch (true) {
       case (fstage > 0 && fstage < 40): 
@@ -278,11 +267,7 @@ function mybfat() {
 }
 
 function fstmsystembmi() {
-  // if ($('#msw')[0].value == 'metric') {
-  //   $('#thw')[0].innerHTML = ' (Cms)';
-  // } else {
-  //   $('#thw')[0].innerHTML = ' (inches)';
-  // };
+
   if ($('#fstmsm')[0].value == 'metric') {
     $('#fstthm')[0].innerHTML = ' (Cms)';
     $('#fsttwm')[0].innerHTML = ' (Kgs)';
@@ -290,24 +275,10 @@ function fstmsystembmi() {
     $('#fstthm')[0].innerHTML = ' (inches)';
     $('#fsttwm')[0].innerHTML = ' (lbs)';
   };
-  // if ($('#msf')[0].value == 'metric') {
-  //   $('#thf')[0].innerHTML = ' (Cms)';
-  //   $('#tneck')[0].innerHTML = ' (Cms)';
-  //   $('#twaist')[0].innerHTML = ' (Cms)';
-  //   $('#thips')[0].innerHTML = ' (Cms)';
-  // } else {
-  //   $('#thf')[0].innerHTML = ' (inches)';
-  //   $('#tneck')[0].innerHTML = ' (inches)';
-  //   $('#twaist')[0].innerHTML = ' (inches)';
-  //   $('#thips')[0].innerHTML = ' (inches)';
-  // }
+
 }
 function msystembmi() {
-  // if ($('#msw')[0].value == 'metric') {
-  //   $('#thw')[0].innerHTML = ' (Cms)';
-  // } else {
-  //   $('#thw')[0].innerHTML = ' (inches)';
-  // };
+
   if ($('#msm')[0].value == 'metric') {
     $('#thm')[0].innerHTML = ' (Cms)';
     $('#twm')[0].innerHTML = ' (Kgs)';
@@ -315,19 +286,8 @@ function msystembmi() {
     $('#thm')[0].innerHTML = ' (inches)';
     $('#twm')[0].innerHTML = ' (lbs)';
   };
-  // if ($('#msf')[0].value == 'metric') {
-  //   $('#thf')[0].innerHTML = ' (Cms)';
-  //   $('#tneck')[0].innerHTML = ' (Cms)';
-  //   $('#twaist')[0].innerHTML = ' (Cms)';
-  //   $('#thips')[0].innerHTML = ' (Cms)';
-  // } else {
-  //   $('#thf')[0].innerHTML = ' (inches)';
-  //   $('#tneck')[0].innerHTML = ' (inches)';
-  //   $('#twaist')[0].innerHTML = ' (inches)';
-  //   $('#thips')[0].innerHTML = ' (inches)';
-  // }
-}
 
+}
 function bmass(one, two, three, four, five, six) {
   let myBmi = 0;
   var ms = $(one)[0].value;
@@ -345,18 +305,30 @@ function bmass(one, two, three, four, five, six) {
   }
   if (ms == 'metric' && height > 0 && bmiage > 0) {
     myBmi = (Math.round(weight / (height * height / 10000) * 100) / 100);
+    if (five == '#bmi') {
+      document.getElementById('ideal-weight-msg').innerHTML = `
+      <p>Healthy weight range for your height:</p>
+      <p><span class="min-weight">${((18.5 * height * height)/10000).toFixed(1)}</span> kg - <span class="max-weight">${((25 * height * height)/10000).toFixed(1)}</span> kg</p>
+      `
+    }
     $(five)[0].value = myBmi + " kg/m2 ";
     $(six)[0].value = getBMImsg(myBmi)
-    // Math.round(weight / (height * height / 10000) * 100) / 100 + " kg/m2 "
   } else if (ms == 'us' && height > 0 && bmiage > 0) {
     myBmi = (Math.round(703 * weight / (height * height) * 100) / 100);
+    if (five == '#bmi') {
+      document.getElementById('ideal-weight-msg').innerHTML = `
+      <p>Healthy weight range for your height:</p>
+      <p><span class="min-weight">${((((18.5 * (height * 2.54) * (height * 2.54))/10000) * 2.205).toFixed(1))}</span> lbs - <span class="max0">${((((25 * (height * 2.54) * (height * 2.54))/10000) * 2.205).toFixed(1))}</span> lbs</p>
+      `
+    }
     $(five)[0].value = myBmi + " kg/m2 ";
     $(six)[0].value = getBMImsg(myBmi)
   } else {
     $(five)[0].value = "Please enter data.";
   }
   fstBmi = myBmi;
-}
+  }
+  
 
 
 

@@ -10,5 +10,3 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-// setTimeout(typeWriter(), 2000)
-// typeWriter()

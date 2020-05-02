@@ -1,13 +1,3 @@
-$('.carousel').carousel();
-//  $('.carousel-slider').carousel({ fullWidth: true });
-//         $(document).ready(function() {
-//         $('[id="ltr"]').lightSlider({
-//             ltr:true
-//         });
-//         $('#rtl').lightSlider({
-//             ltr:true
-//         });
-// });
 
 function fetchDat(theApi, plce){
 const xhr = new XMLHttpRequest();
@@ -19,7 +9,6 @@ elmnts.innerHTML = (xhr.responseText);
 let tr = (Array.from(elmnts.querySelectorAll('table tr')));
 let viddd = '';
 tr.forEach((one) => {
-// console.log(one)
 let chil = Array.from(one.children);
     viddd += `
     <div class="carousel-item">
@@ -29,7 +18,6 @@ let chil = Array.from(one.children);
   <p class="vid-title">${chil[2].innerHTML}</p>
 </div>
     `;
-    // document.querySelector(plce).innerHTML = ' ';
     document.querySelector(plce).innerHTML = viddd;
     
   })
@@ -37,14 +25,42 @@ let chil = Array.from(one.children);
 };
 xhr.onloadend = () => {
 $(plce).lightSlider({
-    ltr:true
+    ltr:true,
+    item:4,
+    loop:true,
+    slideMove:2,
+    easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+    speed:600,
+    responsive : [
+        {
+            breakpoint:840,
+            settings: {
+                item:3,
+                slideMove:1,
+                slideMargin:6,
+              }
+        },
+        {
+            breakpoint:740,
+            settings: {
+                item:2,
+                slideMove:1
+              }
+        },
+        {
+            breakpoint:480,
+            settings: {
+                item:1,
+                slideMove:1
+              }
+        }
+    ]
 });
-// $('#rtl').lightSlider({
-//     ltr:true
-// });
+
 }
 xhr.send();
 
 }
+$('.carousel').carousel();
 fetchDat('boxingvid', '.fst-sect #ltr')
 fetchDat('dietvid', '.sec-sect #ltr')

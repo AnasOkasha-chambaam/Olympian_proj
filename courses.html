@@ -16,74 +16,6 @@
 
 
   <title>ORH | COURSES</title>
-  <!-- <script>
-    function fetchDat(theApi, plce){
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', `../API/${theApi}.html`, true);
-  xhr.onload = () => {
-    if(xhr.status === 200){
-      // console.log('hey')
-      
-      let premModals = document.createElement('div');
-          premModals.id = 'prem-css-modals'
-      let elmnts = document.createElement('html');
-      elmnts.innerHTML = (xhr.responseText);
-      let tr = (Array.from(elmnts.querySelectorAll('table tr')));
-      let viddd = '',
-          modals = '';
-      tr.forEach((one,inde) => {
-        let chil = Array.from(one.children);
-            viddd += `
-        <li class="prem-cs bef found fth-anim-this six-anim-this del-3" id="prem-cs-${chil[0].innerHTML}" style="  background: url(../img/${chil[1].innerHTML}.jpg) no-repeat center center/cover; ">
-          <span class="befr"> * Suitable for ${chil[12].innerHTML} level</span>
-          <div class="whole-txt">
-            <p class="titl"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[2].innerHTML}</a></p>
-            <p class="disc">${chil[3].innerHTML}</p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">${chil[4].innerHTML}</span> videos
-              - <span class="min-num">${chil[6].innerHTML}</span> minutes
-            </p>
-            <p class="pdf">PDF - <span class="pages-num">${chil[9].innerHTML}</span> pages</p>
-          </div>
-          <span class="aftr"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[11].innerHTML}</a></span>
-
-        </li>
-            `;
-            modals += `
-            <div id="prem-cs-pack-${chil[0].innerHTML}" class="modal modal-fixed-footer">
-      <div class="modal-content package-modal-cont">
-        <div class="imag">
-          <img src="img/${chil[1].innerHTML}.jpg">
-        </div>
-       <div class="txt">
-         <h4>${chil[2].innerHTML}</h4>
-         <p>
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
-         </p>
-       </div>
-      </div>
-      <div class="modal-footer package-btns">
-        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
-        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
-        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>${chil[11].innerHTML}</span></a>
-      </div>
-    </div>
-            `;
-
-            // document.querySelector(plce).innerHTML = ' ';
-            document.querySelector(plce).innerHTML = viddd;
-            premModals.innerHTML = modals;
-            document.getElementById('js-modals').appendChild(premModals);
-            $('.modal').modal();
-          })
-    }
-  };
-  xhr.send();
-
-}
-  fetchDat('premiumcourses', '#prem-css')
-  </script> -->
 </head>
 <body>
   <header class="header">
@@ -101,26 +33,6 @@
       </ul>
     </div>
   </header>
-  <!-- <section class="fst-cours">
-    <div class="m-container">
-      <div class="left-side">
-        <img src="img/fstcoursimgleft.jpg" alt="Captin Ramy Helmy">
-        <img src="img/fstcourspng.png" class="zup" alt="Start Your Own Path">
-      </div>
-      <div class="right-side">
-        <img src="img/fstcoursimgright.jpg">
-        <div class="strt-txt">
-          <p>
-            Whatever your goals are
-          </p>
-          <p>
-            we will help you achieve them
-          </p>
-          <button class="start-btn">Start Training <span id="now">NOW</span></button>
-        </div>
-      </div>
-    </div>
-  </section> -->
   <section class="fst-cours-edited">
     <div class="m-container">
       <div class="left-side">
@@ -198,75 +110,13 @@
   <section class="fifth-cours">
     <div class="m-container">
       <ul class="prem-css a-style-hover" id="prem-css">
-        <!-- <li class="prem-cs bef found fth-anim-this del-3" id="prem-cs-1">
-          <div class="whole-txt">
-            <p class="titl">HOW TO BOX IN 10 DAYS?</p>
-            <p class="disc">Learn basic boxing techniques and fundementals of boxing.</p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">5</span> videos
-              - <span class="min-num">45</span> minutes
-            </p>
-            <p class="pdf">PDF - <span class="pages-num">5</span> pages</p>
-          </div>
-        </li>
-        <li class="prem-cs bef adv fth-anim-this del-3" id="prem-cs-2">
-          <div class="whole-txt">
-            <p class="titl">Advanced boxing techniques</p>
-            <p class="disc">Discover the secret tactics of boxing workout to build your power, stamina and speed.</p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">5</span> videos
-              - <span class="min-num">45</span> minutes
-            </p>
-            <p class="pdf">PDF - <span class="pages-num">5</span> pages</p>
-          </div>
-        </li>
-        <li class="prem-cs bef adv fth-anim-this del-3" id="prem-cs-3">
-          <div class="whole-txt">
-            <p class="titl">Boxing workout - Ladies</p>
-            <p class="disc">Learn basic boxing techniques and discover how to improve your balance, power and fitness level .</p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">5</span> videos
-              - <span class="min-num">45</span> minutes
-            </p>
-            <p class="pdf"><span class="pages-num"></span></p>
-          </div>
-        </li>
-        <li class="prem-cs fth-anim-this del-3" id="prem-cs-4">
-          <div class="whole-txt">
-            <p class="titl">Intermediate boxing training</p>
-            <p class="disc">Discover more advanced boxing techniques and improve your foortwork and boxing drils.</p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">5</span> videos
-              - <span class="min-num">45</span> minutes
-            </p>
-            <p class="pdf">PDF - <span class="pages-num">5</span> pages</p>
-          </div>
-        </li>
-        <li class="prem-cs fth-anim-this del-3" id="prem-cs-5">
-          <div class="whole-txt">
-            <p class="titl">CROSS-FIT EXERCISE</p>
-            <p class="disc">Want to get fitter and build your muscles? then you’ve hit the right cross !! </p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">5</span> videos
-              - <span class="min-num">45</span> minutes
-            </p>
-            <p class="pdf">PDF - <span class="pages-num">5</span> pages</p>
-          </div>
-        </li>
-
-         -->
       </ul>
     </div>
   </section>
   <section class="sth-cours" id="nutrition-plans">
     <div class="m-container">
       <img src="img/sthcoursback.jpg" class="back">
-      <img src="img/sthcourspng.png">
+      <img src="img/sthcourspng.png" class="png">
       <div class="reasons">
         <ul class="rsns">
           <li class="rsn fifth-anim-this six-anim-this del-4" id="rsn-1"><img src="img/rsnschckbx.png"> <p> Customized diet plan to achieve your targets.</p></li>
@@ -288,60 +138,6 @@
   <!-- PACKAGES MODAL -->
   <div id="coded-modals">
     <!-- hard coded -->
-    <div id="package-1" class="modal modal-fixed-footer">
-      <div class="modal-content package-modal-cont">
-        <div class="imag">
-          <img src="img/pack1.jpg">
-        </div>
-       <div class="txt">
-         <h4>Plan A</h4>
-         <p>
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
-         </p>
-       </div>
-      </div>
-      <div class="modal-footer package-btns">
-        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
-        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
-        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>$$$$</span></a>
-      </div>
-    </div>
-    <div id="package-2" class="modal modal-fixed-footer">
-      <div class="modal-content package-modal-cont">
-        <div class="imag">
-          <img src="img/pack2.jpg">
-        </div>
-       <div class="txt">
-         <h4>Plan B</h4>
-         <p>
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
-         </p>
-       </div>
-      </div>
-      <div class="modal-footer package-btns">
-        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
-        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
-        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>$$$$</span></a>
-      </div>
-    </div>
-    <div id="package-3" class="modal modal-fixed-footer">
-      <div class="modal-content package-modal-cont">
-        <div class="imag">
-          <img src="img/pack3.jpg">
-        </div>
-       <div class="txt">
-         <h4>Plan C</h4>
-         <p>
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
-         </p>
-       </div>
-      </div>
-      <div class="modal-footer package-btns">
-        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
-        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
-        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>$$$$</span></a>
-      </div>
-    </div>
   </div>
   <!-- injected by js -->
   <div id="js-modals">
@@ -353,109 +149,6 @@
       <!-- <script src="js/lightslider.js"></script> -->
       <script src="js/app.js"></script>
       <!-- <script src="js/appt.js"></script> -->
-      <script>
-        $('.modal').modal();
-        $('a[href="#prem-courses"]').on('click', function(e) {
-  e.preventDefault()
-
-  $('html, body').animate(
-    {
-      scrollTop: $($(this).attr('href')).offset().top,
-    },
-    500,
-    'linear'
-  )
-})
-        class UIA {
-    static testView(x, y){
-      var elmnts = Array.from(document.querySelectorAll(x)),
-    position,
-    windowHeigh = window.innerHeight;
-
-      elmnts.forEach((elmnt) => {
-      position = elmnt.getBoundingClientRect().top;
-      if(position - windowHeigh <= 10){
-        elmnt.classList.add(y)
-        
-      }
-    })
-  }
-
-}
-function test(){
-  UIA.testView('.six-anim-this', 'anim-here')
-  // console.log(elmnts2)
-}
-window.addEventListener('scroll', test );
-
-    function fetchDat(theApi, plce){
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', `../API/${theApi}.html`, true);
-  xhr.onload = () => {
-    if(xhr.status === 200){
-      // console.log('hey')
-      
-      let premModals = document.createElement('div');
-          premModals.id = 'prem-css-modals'
-      let elmnts = document.createElement('html');
-      elmnts.innerHTML = (xhr.responseText);
-      let tr = (Array.from(elmnts.querySelectorAll('table tr')));
-      let viddd = '',
-          modals = '';
-      tr.forEach((one,inde) => {
-        let chil = Array.from(one.children);
-            viddd += `
-        <li class="prem-cs bef found fth-anim-this six-anim-this del-3" id="prem-cs-${chil[0].innerHTML}" style="  background: url(../img/${chil[1].innerHTML}.jpg) no-repeat center center/cover; ">
-          <span class="befr"> * Suitable for ${chil[12].innerHTML} level</span>
-          <div class="whole-txt">
-            <p class="titl"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[2].innerHTML}</a></p>
-            <p class="disc">${chil[3].innerHTML}</p>
-            <p class="mat">COURSE MATERIAL</p>
-            <p class="vid">
-              <span class="vid-num">${chil[4].innerHTML}</span> videos
-              - <span class="min-num">${chil[6].innerHTML}</span> minutes
-            </p>
-            <p class="pdf">PDF - <span class="pages-num">${chil[9].innerHTML}</span> pages</p>
-          </div>
-          <span class="aftr"><a href="#prem-cs-pack-${chil[0].innerHTML}" class="modal-trigger" style="color:inherit">${chil[11].innerHTML}</a></span>
-
-        </li>
-            `;
-            modals += `
-            <div id="prem-cs-pack-${chil[0].innerHTML}" class="modal modal-fixed-footer">
-      <div class="modal-content package-modal-cont">
-        <div class="imag">
-          <img src="img/${chil[1].innerHTML}.jpg">
-        </div>
-       <div class="txt">
-         <h4>${chil[2].innerHTML}</h4>
-         <p>
-           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum commodi, iusto quas, nemo, vel sint debitis ipsa vero in voluptatum magni fugiat voluptas praesentium repellendus ipsam nulla quod consequatur officiis consequuntur non sed odio maiores. Voluptas aperiam aut, facere alias iusto neque recusandae beatae velit distinctio libero nisi omnis. Eaque.
-         </p>
-       </div>
-      </div>
-      <div class="modal-footer package-btns">
-        <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red"><i class="material-icons" style="transform: rotateZ(180deg);">exit_to_app</i> <span> Give It Up</span></a>
-        <a href="#!" class=" waves-effect waves-green btn-flat add-it"> <span>Add To Cart</span>  <i class="material-icons">add_shopping_cart</i></a>
-        <a href="#!" class="waves-effect waves-light btn-flat green pric"><span>${chil[11].innerHTML}</span></a>
-      </div>
-    </div>
-            `;
-
-            // document.querySelector(plce).innerHTML = ' ';
-            document.querySelector(plce).innerHTML = viddd;
-            premModals.innerHTML = modals;
-            document.getElementById('js-modals').appendChild(premModals);
-            $('.modal').modal();
-          })
-    }
-  };
-  xhr.send();
-
-}
-  fetchDat('premiumcourses', '#prem-css')
-  
-
-      </script>
+      <script src="js/coursesscript.js"></script>
 </body>
 </html>

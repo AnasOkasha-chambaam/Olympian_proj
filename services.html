@@ -187,12 +187,6 @@
         </li>
         
       </ul>
-      <!-- <ul class="servs">
-        <li class="serv"><a><img src="img/fthservserv.jpg"> <p>Premium Courses</p></a></li>
-        <li class="serv"><a><img src="img/fthservserv.jpg"> <p>Premium Courses</p></a></li>
-        <li class="serv"><a><img src="img/fthservserv.jpg"> <p>Premium Courses</p></a></li>
-        <li class="serv"><a><img src="img/fthservserv.jpg"> <p>Premium Courses</p></a></li>
-      </ul> -->
     </div>
   </section>
   <section class="fst-serv fifth-serv">
@@ -253,47 +247,7 @@
                   <label for="fstwm">Weight <span id="fsttwm"> (Kgs)</span></label>
                 </div>
               </form>
-              <!-- <form name="fb">
-                <div class="input-field">
-                  <select id="msf" onchange="msystem()" id="select">
-                    <option value="metric">Metric (Kgs, Cms)</option>
-                    <option value="us">US (lbs, inches)</option>
-                  </select>
-                  <label for="msf">Measuring System</label>
-                </div>
-                <div class="input-field">
-                  <select id="sf">
-                    <option value="m">Male</option>
-                    <option value="f">Female</option>
-                  </select>
-                  <label for="sf">Gender</label>
-                </div>
-                <div class="input-field">
-                  <input type="number" id="hf">
-                  <label for="hf">Height <span id="thf">(Cms)</span></label>
-                </div>
-                <div class="input-field">
-                  <input type="number" id="neck">
-                  <label for="neck">Neck Girth<span id="tneck"> (Cms)</span></label>
-                </div>
-                <div class="input-field">
-                  <input id="waist" type="number">
-                  <label for="waist">Waist <span id="twaist">(Cms)</span></label>
-                </div>
-                <div class="input-field">
-                  <input id="hips" type="number">
-                  <label for="hips">Hips <span id="thips">(Cms)</span></label>
-                </div>
-               
-                <!-- <div class="input-field">
-                  <input placeholder="Your Body Fat" id="bf" class="op" type="text" disabled>
-                  <!-- <label for="bf">Your Body Fat</label> --
-                </div>
-                <div class="input-field">
-                  <input placeholder="Body Fat Category" id="nbf" class="op" type="text" disabled>
-                  <!-- <label for="nbf">Body Fat Category</label> --
-                </div> --
-              </form> -->
+
           </div>
         </div>
       
@@ -307,8 +261,7 @@
           <input placeholder="Body Fat Category" id="fstnbf" class="op white-text" type="text" disabled>
           <!-- <label for="nbf">Body Fat Category</label> -->
         </div>
-        <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
-        <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
+
         <button class="btn waves-effect waves-dark btn-flat green white-text" type="button" onclick="mybfat();">Submit</button>
       </div>
     </div>
@@ -359,10 +312,13 @@
           <input placeholder="Normal BMI range"  id="nbmi" value="18.5-25 kg/m2" class="op white-text" type="text" disabled>
           <!-- <label for="nbf">Body Fat Category</label> -->
         </div>
-        <!-- <a href="#!" class="modal-action modal-close waves-effect waves-dark btn-flat g-out red white-text"><span> Close</span></a>
-        <button type="reset" class="btn waves-effect waves-dark btn-flat red white-text">Reset</button> -->
+
         <button class="btn waves-effect waves-dark btn-flat green white-text" type="button"
           onclick="bmass('#msm', `#hm`, `#wm`, `#bmiage`, '#bmi', '#nbmi');">Submit</button>
+        <div class="msg" id="ideal-weight-msg">
+          
+        </div>
+
       </div>
     </div>
     <div id="bmi-app-3" class="modal modal-fixed-footer">
@@ -371,77 +327,103 @@
           <div class="m-container">
             <p class="fat-titl">Macro Calculator
             </p>
-            <form name="macro-calc">
-              <div class="input-field">
-                <select id="msm-macc" onchange="msystemmacc()" id="select">
-                  <option value="metric" selected>Metric (Kgs, Cms)</option>
-                  <option value="us">US (lbs, inches)</option>
-                </select>
-                <label for="msm-macc">Measuring System</label>
-              </div>
-              <div class="input-field">
-                <select id="sf-macc" onchange="changeREEEq()">
-                  <option value="m" selected>Male</option>
-                  <option value="f">Female</option>
-                </select>
-                <label for="sf-macc">Gender</label>
-              </div>
-              <div class="input-field">
-                <input type="number" id="age-macc">
-                <label for="age-macc">Age</label>
-              </div>
-              <div class="input-field">
-                <input type="number" id="hm-macc">
-                <label for="hm-macc">Height <span id="thm-macc">(Cms)</span></label>
-              </div>
-              <div class="input-field">
-                <input type="number" id="wm-macc">
-                <label for="wm-macc">Weight <span id="twm-macc"> (Kgs)</span></label>
-              </div>
-              <div class="input-field">
-                <select id="activity-level" onchange="TDEEChangeF()">
-                  <option value="1.2">Sedentary</option>
-                  <option value="1.375">Light</option>
-                  <option value="1.55">Moderate</option>
-                  <option value="1.725">Very Active</option>
-                </select>
-                <label for="activity-level">Activity Level</label>
-              </div>
-              <div class="goals-div radio-div">
-                <p class="titl">YOUR GOAL</p>
-                <div class="radio-elem">
-                  <p>
-                    <input class="with-gap" type="radio" name="goals" value="0.8" id="g-lose">
-                    <label for="g-lose">Lose</label>
-                  </p>
-                  <p>
-                    <input class="with-gap" type="radio" name="goals" id="g-mentain" value="1" checked>
-                    <label for="g-mentain">Mentain</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="goals" value="1.2" id="g-gain">
-                    <label for="g-gain">Gain</label>
-                  </p>
+            <div class="card" style="background-color: inherit;">
+              
+              <form name="macro-calc">
+                
+                <div class="card-content">
+                  <div id="tab1">
+                    <div class="input-field">
+                      <select id="msm-macc" onchange="msystemmacc()" id="select">
+                        <option value="metric" selected>Metric (Kgs, Cms)</option>
+                        <option value="us">US (lbs, inches)</option>
+                      </select>
+                      <label for="msm-macc">Measuring System</label>
+                    </div>
+                    <div class="input-field">
+                      <select id="sf-macc" onchange="changeREEEq()">
+                        <option value="m" selected>Male</option>
+                        <option value="f">Female</option>
+                      </select>
+                      <label for="sf-macc">Gender</label>
+                    </div>
+                    <div class="input-field">
+                      <input type="number" id="age-macc">
+                      <label for="age-macc">Age</label>
+                    </div>
+                  </div>
+                  <div id="tab2">
+                    <div class="input-field">
+                      <input type="number" id="hm-macc">
+                      <label for="hm-macc">Height <span id="thm-macc">(Cms)</span></label>
+                    </div>
+                    <div class="input-field">
+                      <input type="number" id="wm-macc">
+                      <label for="wm-macc">Weight <span id="twm-macc"> (Kgs)</span></label>
+                    </div>
+                    <div class="input-field">
+                      <select id="activity-level" onchange="TDEEChangeF()">
+                        <option value="1.2">Sedentary</option>
+                        <option value="1.375">Light</option>
+                        <option value="1.55">Moderate</option>
+                        <option value="1.725">Very Active</option>
+                      </select>
+                      <label for="activity-level">Activity Level</label>
+                    </div>
+                  </div>
+                  <div id="tab3">
+                    <div class="goals-div radio-div">
+                      <p class="titl">YOUR GOAL</p>
+                      <div class="radio-elem">
+                        <p>
+                          <input class="with-gap" type="radio" name="goals" value="0.8" id="g-lose">
+                          <label for="g-lose">Lose</label>
+                        </p>
+                        <p>
+                          <input class="with-gap" type="radio" name="goals" id="g-mentain" value="1" checked>
+                          <label for="g-mentain">Maintain</label>
+                        </p>
+                        <p>
+                          <input type="radio" name="goals" value="1.2" id="g-gain">
+                          <label for="g-gain">Gain</label>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="protein-div radio-div">
+                      <p class="titl">ADJUST PROTEIN</p>
+                      <div class="radio-elem">
+                        <p>
+                          <input class="with-gap" type="radio" name="prot" id="p-mod" value="0.65">
+                          <label for="p-mod">Moderate</label>
+                        </p>
+                        <p>
+                          <input class="with-gap" type="radio" name="prot" id="p-high" value="0.82">
+                          <label for="p-high">High</label>
+                        </p>
+                        <p>
+                          <input type="radio" name="prot" id="p-max" value="1" checked>
+                          <label for="p-max">Maximum</label>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="protein-div radio-div">
-                <p class="titl">ADJUST PROTEIN</p>
-                <div class="radio-elem">
-                  <p>
-                    <input class="with-gap" type="radio" name="prot" id="p-mod" value="0.65">
-                    <label for="p-mod">Moderate</label>
-                  </p>
-                  <p>
-                    <input class="with-gap" type="radio" name="prot" id="p-high" value="0.82">
-                    <label for="p-high">Hight</label>
-                  </p>
-                  <p>
-                    <input type="radio" name="prot" id="p-max" value="1" checked>
-                    <label for="p-max">Maximum</label>
-                  </p>
+                <div class="card-tabs">
+                  <ul class="tabs tabs-width-fixed">
+                    <li class="tab">
+                      <a href="#tab1">Step 1</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#tab2">Step 2</a>
+                    </li>
+                    <li class="tab">
+                      <a href="#tab3">Step 3</a>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            </form>
+
+              </form>
+            </div>
             <div id="loader"></div>
             <div class="third-app-results">
               <p><span id="total-cal">0</span> CALORIES PER DAY</p>
@@ -477,7 +459,7 @@
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script type="text/javascript" src="https://www.calculators.tech/assets/lib/js/calculator-widget.js"></script>
+
       <script src="js/app.js"></script>
       <script src="js/serallapps.js"></script>
 </body>
