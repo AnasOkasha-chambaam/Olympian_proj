@@ -405,10 +405,12 @@ function bmass(one, two, three, four, five, six) {
   changeREEEq();
   function getRes(e) {
     document.getElementById('loader').innerHTML = ``;
-    if (isNaN(parseFloat(wtInput.value)) || isNaN(parseFloat(heightInput.value)) || isNaN(parseFloat(ageInput.value))) {
+    if (isNaN(parseFloat(wtInput.value)) || isNaN(parseFloat(heightInput.value)) || isNaN(parseFloat(ageInput.value)) || !document.getElementById('tab3').classList.contains('active')) {
       document.getElementById('third-app-msg').textContent = 'Please, enter data first.';
+      document.getElementById('show-resultss').style.display = 'none';
     } else {
       document.getElementById('third-app-msg').textContent = '';
+      document.getElementById('show-resultss').style.display = 'block';
       const goalsFRadio = document.querySelector('input[name="goals"]:checked');
       let   goalsF = parseFloat(goalsFRadio.value);
       msystemmacc();
@@ -432,7 +434,13 @@ function bmass(one, two, three, four, five, six) {
       document.getElementById('final-fat').innerHTML = Math.round(finalFat);
       document.getElementById('fat-percent').innerHTML = (((finalFat * 9) / finalCal) * 100).toFixed(1);
     }
-    
+    $('html, #scroll-dlt').animate(
+      {
+        scrollTop: $('#loader').offset().top,
+      },
+      900,
+      'linear'
+    )
   }
   document.getElementById('calculate-macc').addEventListener('click', (e) => {
     e.preventDefault();
@@ -440,7 +448,8 @@ function bmass(one, two, three, four, five, six) {
      document.getElementById('loader').innerHTML = `<img src="img/loading.gif" style="width: 60px;
               margin: auto;
               display: block;">`;
-    setTimeout(() => {getRes(ev)}, 400);
+    setTimeout(() => {getRes(ev)}, 1000);
 
   })
+  // Built by Cham baAAm
   

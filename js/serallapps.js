@@ -416,6 +416,47 @@ protF = parseFloat(document.querySelector('input[name="prot"]:checked').value)
 }
 msystemmacc();
 changeREEEq();
+
+function getRes(e) {
+  document.getElementById('loader').innerHTML = ``;
+  if (isNaN(parseFloat(wtInput.value)) || isNaN(parseFloat(heightInput.value)) || isNaN(parseFloat(ageInput.value)) || !document.getElementById('tab3').classList.contains('active')) {
+    document.getElementById('third-app-msg').textContent = 'Please, enter data first.';
+    document.getElementById('show-resultss').style.display = 'none';
+  } else {
+    document.getElementById('third-app-msg').textContent = '';
+    document.getElementById('show-resultss').style.display = 'block';
+    const goalsFRadio = document.querySelector('input[name="goals"]:checked');
+    let   goalsF = parseFloat(goalsFRadio.value);
+    msystemmacc();
+    changeREEEq();
+    TDEEChangeF();
+    protChangeF();
+    FinalEq();
+          finalCal = TDEE * goalsF;
+          finalFat = ((0.30) * finalCal) / 9;
+          switch (usedUnits) {
+            case 2: finalProt = (protF * (parseFloat(wtInput.value) * 2.205)); break;
+            case 1: finalProt = (protF * (parseFloat(wtInput.value))); break;
+          }
+          // finalProt = (protF * (parseFloat(wtInput.value) * 2.205));
+          finalCarbo = (finalCal - (finalProt * 4) - (finalFat * 9))/4;
+    document.getElementById('total-cal').innerHTML = Math.ceil(finalCal);
+    document.getElementById('final-carbo').innerHTML = Math.ceil(finalCarbo);
+    document.getElementById('carbo-percent').innerHTML = (((finalCarbo * 4) / finalCal) * 100).toFixed(1);
+    document.getElementById('final-prot').innerHTML = Math.round(finalProt);
+    document.getElementById('prot-percent').innerHTML = (((finalProt * 4) / finalCal) * 100).toFixed(1);
+    document.getElementById('final-fat').innerHTML = Math.round(finalFat);
+    document.getElementById('fat-percent').innerHTML = (((finalFat * 9) / finalCal) * 100).toFixed(1);
+  }
+  $('html, #scroll-dlt').animate(
+    {
+      scrollTop: $('#loader').offset().top,
+    },
+    900,
+    'linear'
+  )
+}
+/*
 function getRes(e) {
 document.getElementById('loader').innerHTML = ``;
 if (isNaN(parseFloat(wtInput.value)) || isNaN(parseFloat(heightInput.value)) || isNaN(parseFloat(ageInput.value))) {
@@ -447,6 +488,7 @@ document.getElementById('fat-percent').innerHTML = (((finalFat * 9) / finalCal) 
 }
 
 }
+*/
 document.getElementById('calculate-macc').addEventListener('click', (e) => {
 e.preventDefault();
 let ev = e;

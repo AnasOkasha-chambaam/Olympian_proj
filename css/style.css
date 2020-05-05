@@ -14,6 +14,7 @@
   --shadow-clr: #dbb76e83;
   --blue-drk-clr: #1b1b21;
 }
+/* Built by Cham baAAm */
 h1{
   margin: 0;
   padding: 0;
@@ -257,6 +258,7 @@ body {
   font-family: var(--sec-font) !important;
   margin-top: 15px;
   font-size: 18px;
+  font-weight: bolder;
   margin: auto;
   text-align: center;
   color: #000101;
@@ -1074,9 +1076,9 @@ body {
   right: 0;
   bottom: 1px;
   display: block;
-  font-size: 31px;
+  font-size: 27px;
   right: 0;
-  padding-right: 80px;
+  /* padding-right: 80px; */
 }
 .sth-cours .m-container > p > a {
   color: var(--sec-clr);
@@ -1848,12 +1850,12 @@ a.to-prim {
   margin-top: 20px;
   grid-template-columns: repeat(auto-fit, minmax(315px, 1fr));
   gap: 10px;
-  padding-bottom: 40px;
+  padding-bottom: 160px;
 }
 .modal-footer .input-field {
   display: inline-block;
 }
-
+.third-app-results {display: none;}
 .modal-footer input {
   /* color: gray; */
   /* color: #000101 !important; */
@@ -1886,7 +1888,7 @@ form[name="macro-calc"] {
 }
 .radio-elem {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   justify-content: center;
   margin: auto;
   text-align: center;
@@ -1909,6 +1911,7 @@ form[name="macro-calc"] {
 }
 .final-macros {
   margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
 }
 .final-macros div p {
   padding: 10px;
@@ -1920,7 +1923,17 @@ form[name="macro-calc"] {
   background-color: var(--blue-drk-clr);
 
 }
-
+.third-app-results img {
+  width: 90px;
+  height: 60px;
+  /* margin: auto; */
+  background-color: #23232c;
+  padding: 10px;
+  border-radius: 100%;
+  margin: 5px auto;
+  display: block;
+}
+.third-app-results > img {height: 90px}
 .modal-footer .input-field input {
   text-align: center !important;
 }
@@ -2058,7 +2071,7 @@ form[name="macro-calc"] ul.tabs {
   .sec-sect .carousel-item .vid-title {width: max-content;}
   .third-sect .m-container {padding: 0px 30px; padding-bottom: 20px}
   .free-res .m-container > img {position: relative}
-
+  .contact-showcase::before {width: 300px; height: 330px}
 }
 @media (max-height: 850px) {
   a.to-prim {opacity: 1;}
@@ -2066,6 +2079,7 @@ form[name="macro-calc"] ul.tabs {
 @media (max-width: 740px) {
   .fth-cours p {padding-right: 15px;}
   .benefits-txt-container .bnfts-txt {margin-left: 50px}
+  .contact-showcase::before {width: 300px; height: 330px}
 }
 @media (max-width: 700px) {
   .benefits-txt-container .bnfts-txt {margin-left: 20px;z-index: 7;}
@@ -2077,6 +2091,8 @@ form[name="macro-calc"] ul.tabs {
   .benefits-txt-container .bnfts-txt {margin-left: 10px}
   .sth-cours .m-container {min-height: 673px;}
   .sth-cours .m-container > p {font-size: 27px;}
+  .contact-showcase::before {display: none;}
+  .contact-showcase .m-container .frm {width: max-content; margin: auto;}
 }
 @media (max-width: 650px) {
   .header .m-container {grid-template-columns: 53.792px 574.198px;}
@@ -2143,6 +2159,8 @@ form[name="macro-calc"] ul.tabs {
 @media (max-width: 570px) {
   .eith-home .m-container img {width: 70vw !important;}
   .third-home .m-container {min-height: 200px}
+  .third-app-results img {width: 60px;height: 50px}
+  .third-app-results > img {height: 60px}
 }
 @media (max-width: 340px) {
   .fifth-cours .m-container .prem-css .prem-cs {width: 230px;height: 230px;}
@@ -2153,3 +2171,4 @@ form[name="macro-calc"] ul.tabs {
 }
 
 /* FINAL RESPONSIVITY END */
+/* Built by Cham baAAm */
