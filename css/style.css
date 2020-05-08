@@ -354,6 +354,7 @@ body {
   margin: auto;
   width: max-content;
   padding: 0 5px;
+  max-width: 100%
 }
 .lSSlideOuter .lSPager.lSpg > li a {
   background-color: var(--wt-clr)
@@ -1065,7 +1066,7 @@ body {
 .sth-cours .m-container img.back {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   width: 100%;
   height: 100%
 }
@@ -1211,6 +1212,7 @@ div.titl > div.line {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
   text-align: center;
+  padding-bottom: 10px;
 }
 .ansrs .ansr {
   padding: 0 7px;
@@ -1384,20 +1386,22 @@ div.titl > div.line {
 .fth-home::before {
   content: '';
   background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
-  width: 140px;
-  height: 150px;
+  /* width: 140px;
+  height: 150px; */
+  width: 110px;
+  height: 120px;
   position: absolute;
-  top: -100px;
-  left: 460px;
+  top: -70px;
+  right: 30px;
 }
 .fth-home::after {
   content: '';
   background: url(../img/thirdarrowimg.png) no-repeat center center/cover;
-  width: 140px;
-  height: 150px;
+  width: 110px;
+  height: 120px;
   position: absolute;
-  top: -110px;
-  left: 480px;
+  top: -80px;
+  right: 30px;
   opacity: 0.38;
 }
 .fth-home .m-container {
@@ -1529,7 +1533,7 @@ div.titl > div.line {
 .eith-home .m-container img.png {
   width: 590px;
     right: 6px;
-    top: 35%;
+    top: 15%;
 }
 
 .ninth-home {
@@ -1773,9 +1777,9 @@ a.to-prim {
   transform: rotateX(180deg) scale(0.01);
   opacity: 0;
 }
-.fth-serv .m-container {padding-bottom: 40px; padding-top: 60px;}
+.fth-serv .m-container {padding-bottom: 40px; padding-top: 10px;}
 .sec-serv .m-container > img.quote {display: block;transform: scaleX(0.001);}
-.fth-serv .m-container .ansrs .ansr.third-anim-this { transform: scale(1.7);opacity: 0}
+.fth-serv .m-container .ansrs .ansr.third-anim-this { transform: scale(0.7);opacity: 0}
 .fth-serv .m-container .ansrs .ansr.third-anim-this:hover p { color: var(--prim-clr)}
 
 .sec-home .m-container .right-side img.titlpng {display: block;transform: rotateZ(180deg);opacity: 0;}
@@ -1881,6 +1885,7 @@ form[name="macro-calc"] {
   /* grid-template-columns: repeat(auto-fit, minmax(317px, 1fr)); */
   margin: 40px auto;
   font-family: var(--sec-font);
+  padding-bottom: 50px
 }
 .radio-div .titl {
   text-align: center;
@@ -2019,9 +2024,9 @@ form[name="macro-calc"] ul.tabs {
     grid-row: auto;
     grid-column: auto;
   }
-  .contact-showcase .m-container .toch-png, .follow-section .m-container .follow {
-    width: 280px;
-  }
+  /* .contact-showcase .m-container .toch-png, .follow-section .m-container .follow {
+    width: 280px !important;
+  } */
   .contact-showcase::before {
     display: none;
   }
@@ -2038,6 +2043,13 @@ form[name="macro-calc"] ul.tabs {
 }
 
 /* FINAL RESPONSIVITY ST */
+@media (max-width: 1260px) {
+  .third-cours .m-container::before {left: 460px}
+  .benefits-txt-container .bnfts-txt {margin-left: 115px}
+  .fth-cours p {padding-right: 19px}
+  .sth-cours .m-container img.back {width: 92%}
+
+}
 @media (max-width: 1100px) {
   .benefits-txt-container .bnfts-txt {margin-left: 90px;}
   .third-cours .m-container::before {left: 410px;z-index: 3;}
@@ -2046,17 +2058,37 @@ form[name="macro-calc"] ul.tabs {
   .tests {gap: 30px}
   .third-sect .m-container {padding: 0 20px;padding-bottom: 10px}
   .fth-serv .m-container .ansrs .ansr.third-anim-this {transform: scale(0.7)}
-
+  .sixth-home .m-container .achievements {    font-weight: bold;background: rgb(0,0,0,0.4);padding-left: 3px;}
+  .fifth-home .m-container {min-height: 303.52px}
+  .fat-percentage .m-container form {grid-template-columns: 90%}
+}
+@media (max-width: 1022px) {
+  .benefits-txt-container .bnfts-txt {margin-left:60px}
+  .third-cours .m-container::before {left: 300px;width:110px;height:120px;top:-80px;}
+  .third-home .m-container img.txt {width: 96%}
 }
 @media (max-width: 980px) {
   .benefits-txt-container .bnfts-txt {margin-left: 30px}
   .fst-cours-edited .m-container .right-side .strt-txt {font-size: 28px}
   .fst-cours-edited .m-container {min-height:219px}
+  .fifth-home .m-container {min-height: 303.52px}
+}
+@media (max-width: 950px) {
+  .third-sect::before {right: auto;left: 146px}
+  .third-sect::after {right: auto;left: 130px}
+  .contact-showcase::before {right: 5px;}
+}
+@media (max-width: 895px) {
+  .header .m-container {grid-template-columns: 53.792px 684.198px;}
+  .benefits-txt-container .bnfts-txt {margin-left: 5px}
+  .fth-cours p {padding-right: 0;font-size: 48px;}
+  .sth-cours .m-container img.back {width: 95%}
+  .fifth-home .m-container {min-height: 301.52px;}
 }
 @media (max-width: 850px){
   .sec-home .m-container .right-side img.titlpng {max-width: 340px;top: 20px;}
   .third-home .m-container img.png {margin-bottom: 70px;transform: translateY(-120px)}
-  .third-home .m-container img.txt {width: 97%}
+  .third-home .m-container img.txt {width: 96%}
   .fifth-home .m-container img.titl {transform: scale(0.6)}
   .tests { grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));}
   .third-cours .m-container {padding-bottom: 20px}
@@ -2074,17 +2106,29 @@ form[name="macro-calc"] ul.tabs {
   .sec-sect .carousel-item .vid-title {width: max-content;}
   .third-sect .m-container {padding: 0px 30px; padding-bottom: 20px}
   .free-res .m-container > img {position: relative}
-  .contact-showcase::before {width: 300px; height: 330px}
+  .contact-showcase::before {width: 300px; height: 330px;top: auto;bottom: 30px;right: 10px}
+  .third-sect::before {right: auto;left: 60px}
+  .third-sect::after {right: auto;left: 56px}
 }
 @media (max-height: 850px) {
   a.to-prim {opacity: 1;}
   .fth-home::before,.fth-home::after {left: auto; right: 30px}
 
 }
+@media (max-width: 770px) {
+  .fifth-home .m-container {min-height: 250.52px}
+  .fifth-home .m-container img.titl {margin-bottom: 70px;}
+  .sth-cours .m-container img.back {width: 90%;left: 0;right: auto}
+}
 @media (max-width: 740px) {
+  .header .m-container {grid-template-columns: 53.792px 574.198px;}
   .fth-cours p {padding-right: 15px;}
   .benefits-txt-container .bnfts-txt {margin-left: 50px}
   .contact-showcase::before {width: 300px; height: 330px}
+}
+@media (max-width: 715px) {
+  .benefits-txt-container .bnfts-txt {margin-left: 35px}
+  .fth-cours p {padding-right: 0px}
 }
 @media (max-width: 700px) {
   .benefits-txt-container .bnfts-txt {margin-left: 20px;z-index: 7;}
@@ -2100,12 +2144,26 @@ form[name="macro-calc"] ul.tabs {
   .contact-showcase .m-container .frm {width: max-content; margin: auto;}
   .third-cours .m-container::before {top: -70px;width: 80px;height:90px;}
 }
+@media (max-width:674px) {
+  .third-sect::before {right: auto;left: 16px}
+  .third-sect::after {right: auto;left: 10px}
+}
 @media (max-width: 650px) {
-  .header .m-container {grid-template-columns: 53.792px 574.198px;}
+  .header .m-container {grid-template-columns: 53.792px 524.198px;}
   .fifth-home .m-container {grid-template-columns: auto}
   .fifth-home .m-container img.titl {z-index: 5}
   .sixth-home .m-container .achievements {margin-left: 120px}
-
+  .sixth-home::before, .sixth-home::after {width:80px;height:90px;top:-10px;left:25px}
+  .sixth-home::after {top:-20px}
+  .ninth-home::after {left:auto;right: 10px}
+  .ninth-home::before {left:auto;right: 10px;}
+  .fth-cours p {padding-right: 0px;font-size:33px}
+  .sec-cours .m-container .benefits-title p {font-size: 44px;}
+  .benefits-txt-container .bnfts-txt {margin-left: 0;}
+  .bnfts-txt .bnfts .bnft p {font-size: 20px}
+}
+@media (max-width:630px) {
+  .sth-cours .m-container img.back {width: 80%}
 }
 @media (max-width: 590px) {
   .header {max-height: max-content ;}
@@ -2142,7 +2200,7 @@ form[name="macro-calc"] ul.tabs {
   .sec-cours .m-container {grid-template-columns: auto;height: 1420px/* 1620px */;    grid-template-rows: 550px auto;}
   .benefits-txt-container .bnfts-txt {margin-left: 10px}
   .third-cours .m-container::before {width: 90px;height: 100px; top: -50px;left: 60px}
-  .fifth-cours .m-container {padding: 0;}
+  .fifth-cours .m-container {padding: 0;border-left: 10px solid var(--prim-clr);}
   .fth-cours .m-container {display: flex;flex-direction: column-reverse}
   .fth-cours p {font-size: 29px}
   .fifth-cours .m-container {padding: 40px 6px}
@@ -2160,11 +2218,12 @@ form[name="macro-calc"] ul.tabs {
   .fst-sect, .sec-sect {height:auto !important}
   .fst-sect .m-container .vidss, .sec-sect .m-container .vidss {height: auto !important}
   .third-sect::after, .third-sect::before {width: 50px;height: 60px}
-  .third-sect::after {top: -20px;right: 270px}
-  .third-sect::before {top: -22px;right: 280px}
+  .third-sect::after {top: -20px;right: 50px}
+  .third-sect::before {top: -22px;right: 60px}
   .sec-serv .m-container {min-height: 550px;}
   .third-home .m-container img.png {margin-bottom: 20px}
   .fifth-cours::before {right: auto;left: 50px}
+  .eith-home .m-container img.png {top:5%}
 }
 @media (max-width: 570px) {
   .eith-home .m-container img {width: 70vw !important;}
@@ -2173,14 +2232,21 @@ form[name="macro-calc"] ul.tabs {
   .third-app-results > img {height: 60px}
   .third-cours .m-container::before {width:70px;height:80px}
   .fifth-cours::before {top: -100px;width:110px;height:120px}
-  .package-modal-cont .txt {margin-bottom: 70px}
+  .package-modal-cont .txt {margin-bottom: 135px}
   .modal .modal-content {padding: 0px;padding-top: 20px}
   .an-app .modal-content .input-field {width: 80%; margin-left: auto;margin-right: auto;}
   .fat-percentage .m-container form {padding-bottom: 190px}
+  .eith-home .m-container {min-height: 210px}
+  .contact-showcase .m-container .toch-png, .follow-section .m-container .follow {width: 89vw}
   /* .select-wrapper input.select-dropdown, input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {width: 80%} */
 }
 @media (max-width: 380px) {
   .fifth-cours::before {top: -60px;width: 80px;height: 90px;}
+  .eith-home .m-container {min-height: 150px}
+  .sec-cours .m-container .benefits-title p {font-size: 46px}
+  .third-sect .m-container {padding: 0 10px}
+  .free-res .m-container > img {width: 96%}
+  .contact-showcase .m-container {padding-left: 0}
 }
 @media (max-width: 340px) {
   .fifth-cours .m-container .prem-css .prem-cs {width: 230px;height: 230px;}
@@ -2189,6 +2255,41 @@ form[name="macro-calc"] ul.tabs {
   .fst-serv .m-container {padding: 0}
   .third-home .m-container {min-height: 170px}
 }
+@media (max-width: 295px) {
+  .contact-showcase .m-container form {width: 210px}
+  .follow-section .m-container {height: 240px}
+  .sec-gallery .imgs {padding: 1px}
+  .tests .test p {width: 100%}
+  .tests {grid-template-columns: 190px; }
+  .fat-titl {width: 90%}
+  .tabs .tab a {padding: 0 1px}
+  .sec-cours .m-container .benefits-title p {font-size: 34px}
+  .sec-cours .m-container .benefits-title img {width: 96vw}
+  .bnfts-txt .bnfts {width: 190px}
+  .bnfts-txt .bnfts .bnft p {font-size: 17px}
+  .third-cours .m-container .packages {grid-template-columns: 99%;}
+  .fth-cours p {font-size: 20px}
+  .fth-cours img {width: 200px !important;height: 58px ;}
+  .fifth-cours .m-container .prem-css {grid-template-columns: 90%}
+  .fifth-cours .m-container {padding: 40px 0;border-left: 0px solid var(--prim-clr);}
+  .benefits-txt-container::before {left: auto;right:20px}
+  .fst-cours-edited .m-container .right-side .strt-txt {font-size: 12px}
+  .sth-cours .m-container {min-height: 803px}
+  .package-modal-cont {grid-template-columns: 90%;}
+  .package-modal-cont .imag img {max-width: 100%}
+  .package-modal-cont .txt p {font-size: 11px}
+  .ansrs {grid-template-columns: 90%;justify-content: center;}
+  .fifth-serv .tests {justify-content: center;}
+  .sec-home .m-container .right-side img.titlpng {top:10px}
+  .right-reasns .boxing-rsns {width: 220px}
+  .right-reasns .boxing-rsns .boxing-rsn {font-size: 13px}
+  .right-reasns .boxing-rsns::before {font-size: 22px}
+  .third-home .m-container {min-height: 130px}
+  .fth-home::before, .fth-home::after {width: 70px;height: 80px;}
+  .fth-home::before {top:-40px}
+  .fth-home::after {top: -50px}
+  .sixth-home .m-container .achievements {font-size: 11px}
+} 
 
 /* FINAL RESPONSIVITY END */
 /* Built by Cham baAAm */
