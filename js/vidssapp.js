@@ -33,7 +33,7 @@ $(plce).lightSlider({
     speed:600,
     responsive : [
         {
-            breakpoint:840,
+            breakpoint:1025,
             settings: {
                 item:3,
                 slideMove:1,

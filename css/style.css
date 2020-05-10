@@ -212,6 +212,13 @@ body {
   border: 0.1px solid black;
   box-shadow: 0px 0px 4px black;
 }
+.filler {
+  width: 100%;
+  height: 30vh;
+  background-color: var(--gdrk-clr);
+  display: none;
+}
+
 /* CONTACT SHOWCASE END */
 /* NOT BUILT ST */
   .not-built {
@@ -432,7 +439,8 @@ body {
   color: var(--drk-clr);
   margin: auto;
   margin-top: 10px;
-  width: max-content;
+  width: 100%;
+  max-width: max-content;
   padding: 0 4px;
 }
 
@@ -1209,7 +1217,7 @@ div.titl > div.line {
 }
 .ansrs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, auto));
   gap: 10px;
   text-align: center;
   padding-bottom: 10px;
@@ -1321,6 +1329,8 @@ div.titl > div.line {
 
 .fifth-serv .m-container .tests .test a {border: none;}
 .fifth-serv .m-container .tests .test p {background: none; color: var(--wt-clr)}
+.serv-ansrs {grid-template-columns: repeat(auto-fit, minmax(140px, auto))}
+
 /* SERIVCES END */
 
 /* HOME ST */
@@ -1622,6 +1632,7 @@ div.titl > div.line {
    gap: 4px;
   background-color: var(--wt-clr);
   padding: 20px;
+  padding-bottom: 70vw
   /* min-height: 100vw;
   align-items: flex-start; */
 }
@@ -1843,7 +1854,8 @@ a.to-prim {
   padding: 20px;
   color: var(--wt-clr);
   background: var(--prim-clr);
-  width: max-content;
+  width: 90%;
+  max-width: max-content;
   margin: auto;
   font-size: 18px;
   font-weight: bold;
@@ -2084,6 +2096,7 @@ form[name="macro-calc"] ul.tabs {
   .fth-cours p {padding-right: 0;font-size: 48px;}
   .sth-cours .m-container img.back {width: 95%}
   .fifth-home .m-container {min-height: 301.52px;}
+  .header .m-container ul li:first-child a {padding-left:40px}
 }
 @media (max-width: 850px){
   .sec-home .m-container .right-side img.titlpng {max-width: 340px;top: 20px;}
@@ -2109,11 +2122,20 @@ form[name="macro-calc"] ul.tabs {
   .contact-showcase::before {width: 300px; height: 330px;top: auto;bottom: 30px;right: 10px}
   .third-sect::before {right: auto;left: 60px}
   .third-sect::after {right: auto;left: 56px}
+  .sixth-home .m-container {background: url(../img/achievtwo.jpg) no-repeat center center/cover;}
+  .serv-ansrs .ansr p.titl {font-size: 24px}
+  .third-serv .m-container .serv-ansrs .ansr p {font-size: 15px}
+  .third-serv .m-container .serv-ansrs .ansr p.txt {font-size: 13px}
+}
+@media (min-height: 851px) {
+  .filler {display: block;}
 }
 @media (max-height: 850px) {
   a.to-prim {opacity: 1;}
   .fth-home::before,.fth-home::after {left: auto; right: 30px}
-
+}
+@media (max-width: 790px) and (min-width:590px) {
+  .ansrs { grid-template-columns: repeat(2, minmax(190px, auto));padding-top: 50px}
 }
 @media (max-width: 770px) {
   .fifth-home .m-container {min-height: 250.52px}
@@ -2164,6 +2186,10 @@ form[name="macro-calc"] ul.tabs {
 }
 @media (max-width:630px) {
   .sth-cours .m-container img.back {width: 80%}
+  .fth-cours p {font-size: 30px}
+  .bnfts-txt .bnfts {width: 260px}
+  .bnfts-txt .bnfts .bnft p {font-size: 19px}
+  .sec-cours .m-container {height: 740px}
 }
 @media (max-width: 590px) {
   .header {max-height: max-content ;}
@@ -2172,6 +2198,7 @@ form[name="macro-calc"] ul.tabs {
   .header .m-container .categ {grid-template-rows: repeat(5, 1fr);grid-template-columns: auto;}
   .header .m-container .categ li {border-bottom: 1px solid #333;}
   .header .m-container .categ li::before {display: none;}
+  .header .m-container ul li:first-child a {padding-left:0px}
   .fst-cours .m-container {grid-template-columns: 0 1fr;}
   .third-home .m-container {min-height: 240px}
   .fth-home .m-container {grid-template-columns: 0 1fr;}
@@ -2186,10 +2213,11 @@ form[name="macro-calc"] ul.tabs {
   .eith-home .m-container {min-height: 290px}
   .eith-home .m-container img {width: 90vw !important; z-index: 2;}
   .eith-home .m-container img.png {top: 25%;}
-  .ninth-home::after, .ninth-home::before {top: -20px; left: 0;width: 90px;height: 100px;}
+  .ninth-home::after, .ninth-home::before {top: -40px;width: 90px;height: 100px;}
+  .ansrs {padding-top: 50px}
   .sixth-home::after, .sixth-home::before {right: auto; left: 20px;width: 90px;height: 100px;top:-90px;}
   .sixth-home::after {top: -100px}
-  .ninth-home::after {top: -30px;}
+  .ninth-home::after {top: -50px;}
   .third-home .m-container img.txt {width: 87%}
   .sec-serv .m-container {grid-template-columns: auto;}
   .third-serv .m-container ul {margin: 30px 0 0 0}
@@ -2217,20 +2245,28 @@ form[name="macro-calc"] ul.tabs {
   .carousel-item .vid-title {font-size: 12.5px; padding: 0 !important}
   .fst-sect, .sec-sect {height:auto !important}
   .fst-sect .m-container .vidss, .sec-sect .m-container .vidss {height: auto !important}
-  .third-sect::after, .third-sect::before {width: 50px;height: 60px}
-  .third-sect::after {top: -20px;right: 50px}
-  .third-sect::before {top: -22px;right: 60px}
+  .third-sect::after, .third-sect::before {width: 70px;height: 80px;}
+  .third-sect::after {top: -28px;right: 50px}
+  .third-sect::before {top: -30px;right: 60px}
   .sec-serv .m-container {min-height: 550px;}
   .third-home .m-container img.png {margin-bottom: 20px}
   .fifth-cours::before {right: auto;left: 50px}
   .eith-home .m-container img.png {top:5%}
+  .bnfts-txt .bnfts .bnft p {font-size: 30px}
+  .bnfts-txt .bnfts {width: 90vw}
+  .sec-cours .m-container .benefits-title img {width: 90vw}
+  .sec-cours .m-container .benefits-title p {width: 99vw;font-size:32px}
+  .sec-cours .m-container {grid-template-rows: 350px auto;height: 1150px}
+  .sec-cours {background: url(../img/seccoursbacktwo.jpg) no-repeat center center/cover}
+  .third-cours .m-container::before {width: 130px;height: 150px;left: 22px;}
+  /* .sec-cours .m-container {height: 1260px;} */
 }
 @media (max-width: 570px) {
   .eith-home .m-container img {width: 70vw !important;}
   .third-home .m-container {min-height: 200px}
   .third-app-results img {width: 60px;height: 50px}
   .third-app-results > img {height: 60px}
-  .third-cours .m-container::before {width:70px;height:80px}
+  .third-cours .m-container::before {width: 130px;height: 150px;left: 22px;}
   .fifth-cours::before {top: -100px;width:110px;height:120px}
   .package-modal-cont .txt {margin-bottom: 135px}
   .modal .modal-content {padding: 0px;padding-top: 20px}
@@ -2240,6 +2276,33 @@ form[name="macro-calc"] ul.tabs {
   .contact-showcase .m-container .toch-png, .follow-section .m-container .follow {width: 89vw}
   /* .select-wrapper input.select-dropdown, input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {width: 80%} */
 }
+@media (max-width:810px) and (min-width:400px) {
+  .serv-ansrs {grid-template-columns: repeat(2, minmax(135px, auto));}
+}
+@media (max-width: 485px) {
+  .third-cours .m-container::before {top: -30px}
+  .sec-cours .m-container {height:1230px}
+}
+@media (max-width: 470px) {
+  .sec-cours .m-container {height: 1290px;}
+}
+@media (max-width: 446px) {
+  .third-cours .m-container::before {width: 90px;height: 110px;}
+}
+@media (max-width: 436px) {
+  .bnfts-txt .bnfts .bnft p {font-size: 28px}
+}
+@media (max-width: 415px) {
+  .fifth-cours::before {top: -60px;width: 80px;height: 90px;left: 20px;}
+  .sec-cours .m-container .benefits-title p {width: 89vw;font-size: 42px;top: 0;height: max-content;}
+  .sixth-home::after, .sixth-home::before {z-index: 7;}
+  .sixth-home::after {top: -50px}
+  .sixth-home::before {top: -40px}
+}
+@media (max-width: 383px) {
+  .bnfts-txt .bnfts .bnft p {font-size: 27px}
+  .third-cours .m-container::before {width: 90px;height: 110px;}
+}
 @media (max-width: 380px) {
   .fifth-cours::before {top: -60px;width: 80px;height: 90px;}
   .eith-home .m-container {min-height: 150px}
@@ -2247,6 +2310,11 @@ form[name="macro-calc"] ul.tabs {
   .third-sect .m-container {padding: 0 10px}
   .free-res .m-container > img {width: 96%}
   .contact-showcase .m-container {padding-left: 0}
+  .sec-cours .m-container .benefits-title p {top: 10px;height: max-content}
+}
+@media (max-width: 358px) {
+  .bnfts-txt .bnfts .bnft p {font-size:26px}
+  .third-cours .m-container::before {left: 3px}
 }
 @media (max-width: 340px) {
   .fifth-cours .m-container .prem-css .prem-cs {width: 230px;height: 230px;}
@@ -2254,6 +2322,14 @@ form[name="macro-calc"] ul.tabs {
   .benefits-txt-container .bnfts-txt {margin-left: 5px;}
   .fst-serv .m-container {padding: 0}
   .third-home .m-container {min-height: 170px}
+  .m-container .name {font-size: 22px !important}
+}
+@media (max-width: 316px) {
+  .bnfts-txt .bnfts {width: 260px}
+  .fth-cours p {font-size:27px}
+  .sth-cours .m-container {min-height: 703px;}
+  .sec-cours .m-container {height:1470px;}
+  .third-cours .m-container::before {width:70px;height:90px}
 }
 @media (max-width: 295px) {
   .contact-showcase .m-container form {width: 210px}
@@ -2265,7 +2341,7 @@ form[name="macro-calc"] ul.tabs {
   .tabs .tab a {padding: 0 1px}
   .sec-cours .m-container .benefits-title p {font-size: 34px}
   .sec-cours .m-container .benefits-title img {width: 96vw}
-  .bnfts-txt .bnfts {width: 190px}
+  .bnfts-txt .bnfts {width: 85vw}
   .bnfts-txt .bnfts .bnft p {font-size: 17px}
   .third-cours .m-container .packages {grid-template-columns: 99%;}
   .fth-cours p {font-size: 20px}
@@ -2289,6 +2365,7 @@ form[name="macro-calc"] ul.tabs {
   .fth-home::before {top:-40px}
   .fth-home::after {top: -50px}
   .sixth-home .m-container .achievements {font-size: 11px}
+  .sec-cours .m-container {height: 1000px}
 } 
 
 /* FINAL RESPONSIVITY END */
