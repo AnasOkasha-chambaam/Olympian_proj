@@ -1298,7 +1298,7 @@ div.titl > div.line {
 
 .fth-serv .m-container > img {
   display: block;
-  margin: 30px auto;
+  margin: 20px auto;
   max-width: 430px;
 }
 .fth-serv .m-container .ansrs {margin-bottom: 15px}
@@ -1977,7 +1977,14 @@ form[name="macro-calc"] ul.tabs {
 #ideal-weight-msg p {
   padding: 1.5px;
 }
-
+/* ADD FOR MODIFICATION */
+.third-serv .m-container .why-us ul.ansrs {padding-top: 0}
+.third-serv .m-container .why-us ul.ansrs:last-child {margin-top: 10px}
+.fth-serv .m-container .ansrs {padding-top: 10px}
+.fth-serv.ninth-home .m-container .ansrs {padding-top: 50px}
+.fifth-serv .m-container .tests {padding-top: 5px}
+.fst-serv .m-container .ansrs {padding-top: 10px}
+/* END */
 
 /* RESPONSIVITY */
 @media (max-height: 1023px){
@@ -2074,6 +2081,9 @@ form[name="macro-calc"] ul.tabs {
   .fifth-home .m-container {min-height: 303.52px}
   .fat-percentage .m-container form {grid-template-columns: 90%}
 }
+@media (max-width: 1025px) {
+  .third-sect.free-res .tests .test p {font-size: 15px;}
+}
 @media (max-width: 1022px) {
   .benefits-txt-container .bnfts-txt {margin-left:60px}
   .third-cours .m-container::before {left: 300px;width:110px;height:120px;top:-80px;}
@@ -2141,6 +2151,7 @@ form[name="macro-calc"] ul.tabs {
   .fifth-home .m-container {min-height: 250.52px}
   .fifth-home .m-container img.titl {margin-bottom: 70px;}
   .sth-cours .m-container img.back {width: 90%;left: 0;right: auto}
+  .carousel-item .vid-title {font-size: 16px}
 }
 @media (max-width: 740px) {
   .header .m-container {grid-template-columns: 53.792px 574.198px;}
@@ -2160,7 +2171,7 @@ form[name="macro-calc"] ul.tabs {
   .tests {grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));}
   .fst-serv .m-container {padding: 0;padding-bottom: 35px}
   .benefits-txt-container .bnfts-txt {margin-left: 10px}
-  .sth-cours .m-container {min-height: 673px;}
+  .sth-cours .m-container {min-height: 603px;}
   .sth-cours .m-container > p {font-size: 27px;}
   .contact-showcase::before {display: none;}
   .contact-showcase .m-container .frm {width: max-content; margin: auto;}
@@ -2240,7 +2251,7 @@ form[name="macro-calc"] ul.tabs {
   .sth-cours .m-container {background:none; background-color: #19181e;}
   .sth-cours .m-container img.back {display: none}
   .sth-cours .m-container img.png {width: 99%}
-  .sth-cours .m-container > p {font-size: 28px;padding-right: 26px}
+  .sth-cours .m-container > p {font-size: 28px;padding-right: 0px}
   .sec-sect .carousel-item, .fst-sect .carousel-item {height: auto;}
   .carousel-item .vid-title {font-size: 12.5px; padding: 0 !important}
   .fst-sect, .sec-sect {height:auto !important}
@@ -2259,8 +2270,13 @@ form[name="macro-calc"] ul.tabs {
   .sec-cours .m-container {grid-template-rows: 350px auto;height: 1150px}
   .sec-cours {background: url(../img/seccoursbacktwo.jpg) no-repeat center center/cover}
   .third-cours .m-container::before {width: 130px;height: 150px;left: 22px;}
+  .third-serv .m-container .why-us ul.ansrs {padding-top: 0}
   /* .sec-cours .m-container {height: 1260px;} */
+  .third-serv .m-container .why-us ul.ansrs:last-child {margin-top: 17px}
+  .fst-serv .m-container .ansrs {padding-top: 10px}
+  .fifth-serv .m-container .tests {padding-top: 5px}
 }
+
 @media (max-width: 570px) {
   .eith-home .m-container img {width: 70vw !important;}
   .third-home .m-container {min-height: 200px}
@@ -2274,6 +2290,7 @@ form[name="macro-calc"] ul.tabs {
   .fat-percentage .m-container form {padding-bottom: 190px}
   .eith-home .m-container {min-height: 210px}
   .contact-showcase .m-container .toch-png, .follow-section .m-container .follow {width: 89vw}
+  .sth-cours .m-container {min-height: 543px}
   /* .select-wrapper input.select-dropdown, input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {width: 80%} */
 }
 @media (max-width:810px) and (min-width:400px) {
@@ -2298,6 +2315,7 @@ form[name="macro-calc"] ul.tabs {
   .sixth-home::after, .sixth-home::before {z-index: 7;}
   .sixth-home::after {top: -50px}
   .sixth-home::before {top: -40px}
+  .sth-cours .m-container {min-height: 630px}
 }
 @media (max-width: 383px) {
   .bnfts-txt .bnfts .bnft p {font-size: 27px}
@@ -2311,10 +2329,30 @@ form[name="macro-calc"] ul.tabs {
   .free-res .m-container > img {width: 96%}
   .contact-showcase .m-container {padding-left: 0}
   .sec-cours .m-container .benefits-title p {top: 10px;height: max-content}
+  .sth-cours .m-container > p {font-size: 22px; padding-left: 0}
+  .sth-cours .m-container > p > a {font-size: 30px}
+  .rsns {margin-top: 10px}
+  .sth-cours .m-container {min-height: 573px}
+  .third-sect .m-container .tests .test p {font-size: 15px}
+  .third-sect .m-container {padding-bottom: 20px}
+  .third-serv .m-container .ansrs {padding-top: 0}
+  .sec-home .m-container .right-side img.titlpng {max-width: 90vw}
+  .fth-serv.ninth-home .m-container .ansrs {padding-top: 51px}
 }
 @media (max-width: 358px) {
   .bnfts-txt .bnfts .bnft p {font-size:26px}
   .third-cours .m-container::before {left: 3px}
+}
+@media (max-width: 322px) {
+  .serv-ansrs .ansr p.titl {font-size: 22px}
+  .third-serv .m-container,.fth-serv .m-container  {padding-bottom: 10px}
+  .fst-serv.fifth-serv .m-container {padding-bottom: 20px}
+  
+}
+.third-serv .m-container,.fth-serv .m-container  {padding-bottom: 10px}
+.fst-serv.fifth-serv .m-container {padding-bottom: 20px}
+@media (max-width: 324px) and (min-width: 315px) {
+  .fst-serv.fst-one .m-container .ansrs {grid-template-columns: repeat(auto-fit, minmax(160px, auto));}
 }
 @media (max-width: 340px) {
   .fifth-cours .m-container .prem-css .prem-cs {width: 230px;height: 230px;}
@@ -2327,7 +2365,7 @@ form[name="macro-calc"] ul.tabs {
 @media (max-width: 316px) {
   .bnfts-txt .bnfts {width: 260px}
   .fth-cours p {font-size:27px}
-  .sth-cours .m-container {min-height: 703px;}
+  .sth-cours .m-container {min-height: 630px;}
   .sec-cours .m-container {height:1470px;}
   .third-cours .m-container::before {width:70px;height:90px}
 }
@@ -2350,7 +2388,7 @@ form[name="macro-calc"] ul.tabs {
   .fifth-cours .m-container {padding: 40px 0;border-left: 0px solid var(--prim-clr);}
   .benefits-txt-container::before {left: auto;right:20px}
   .fst-cours-edited .m-container .right-side .strt-txt {font-size: 12px}
-  .sth-cours .m-container {min-height: 803px}
+  .sth-cours .m-container {min-height: 673px}
   .package-modal-cont {grid-template-columns: 90%;}
   .package-modal-cont .imag img {max-width: 100%}
   .package-modal-cont .txt p {font-size: 11px}
@@ -2366,6 +2404,7 @@ form[name="macro-calc"] ul.tabs {
   .fth-home::after {top: -50px}
   .sixth-home .m-container .achievements {font-size: 11px}
   .sec-cours .m-container {height: 1000px}
+  .third-sect.free-res .tests {justify-content: center;}
 } 
 
 /* FINAL RESPONSIVITY END */

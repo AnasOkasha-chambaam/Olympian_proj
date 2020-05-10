@@ -41,7 +41,7 @@ $(plce).lightSlider({
               }
         },
         {
-            breakpoint:740,
+            breakpoint:770,
             settings: {
                 item:2,
                 slideMove:1
